@@ -1,0 +1,46 @@
+{
+  "owner": {
+    "name": "Ravi Arora",
+    "businessName": "Ravi Arora Personal Real Estate Corporation",
+    "designation": "PREC*",
+    "phone": "6043620362",
+    "email": "rezoningrealtor@gmail.com",
+    "location": "Coquitlam, BC"
+  },
+  "brokerage": {
+    "name": "Coldwell Banker Universe Realty",
+    "board": "Real Estate Board of Greater Vancouver"
+  },
+  "brand": {
+    "tagline": "Real Estate. Real Advice. Real Results.",
+    "serviceArea": "Coquitlam · Tri-Cities · Metro Vancouver · Fraser Valley",
+    "homeBase": "Coquitlam, BC"
+  },
+  "links": {
+    "realtorCaProfile": "https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8",
+    "linkedin": "[YOUR LINKEDIN URL]",
+    "instagram": "https://www.instagram.com/rezoningrealtor",
+    "facebook":"https://www.facebook.com/rezoningrealtor/"
+    "domain": "https://www.rezoningrealtor.com",
+    "calendly": "[YOUR CALENDLY LINK]"
+  },
+  "analytics": {
+    "ga4MeasurementId": "[YOUR GA4 ID — e.g. G-XXXXXXXXXX]",
+    "metaPixelId": "[YOUR META PIXEL ID IF USING]"
+  },
+  "forms": {
+    "googleSheetEndpoint": "[REPLACE: APPS SCRIPT WEB APP URL — see README for setup instructions]",
+    "googleSheetId": "1aRIeMzN_mSqy-TG__PZ7utrArMg76KvZwgUjSzpdJTQ",
+    "googleSheetTab": "Form Submissions",
+    "notificationEmail": "[REPLACE: YOUR EMAIL ADDRESS]",
+    "sheetName": "Website Leads",
+    "driveFolderName": "_Home",
+    "mailchimpWebhook": "[YOUR MAILCHIMP OR KIT WEBHOOK URL]"
+  },
+  "copyright": {
+    "year": "2025"
+  }
+
+
+  
+}
