@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving to Port Coquitlam BC | Neighbourhoods, Schools & Community Guide</title>
+<meta name="description" content="Your complete guide to living in Port Coquitlam — schools, parks, transportation, demographics, and a neighbourhood breakdown of Central PoCo, Riverwood, and Woodland Acres. From a realtor who knows the city.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.guide-hero { background: var(--bg-dark); padding: 9rem var(--gutter) 5rem; }
+.guide-hero-breadcrumb { font-size: var(--xs); color: rgba(242,237,227,0.45); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.guide-hero-breadcrumb a { color: rgba(242,237,227,0.45); }
+.guide-hero-breadcrumb a:hover { color: var(--gold); }
+.guide-hero h1 { font-family: var(--display); font-size: clamp(2.25rem,5vw,3.5rem); color: var(--t-light); max-width: 700px; line-height: 1.15; margin-bottom: 1.25rem; }
+.guide-hero-lead { font-size: var(--lg); color: var(--t-muted); font-weight: 300; max-width: 560px; line-height: 1.7; margin-bottom: 2.5rem; }
+.guide-hero-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.guide-tag { font-size: var(--xs); font-weight: 500; color: var(--t-muted); background: rgba(242,237,227,0.08); border: 1px solid rgba(242,237,227,0.14); border-radius: 100px; padding: 0.35rem 0.85rem; letter-spacing: 0.04em; }
+.city-stats-bar { background: var(--gold); }
+.city-stats-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: repeat(4,1fr); }
+.city-stat-item { padding: 1.25rem 1rem; text-align: center; border-right: 1px solid rgba(26,25,22,0.15); }
+.city-stat-item:last-child { border-right: none; }
+.city-stat-val { display: block; font-family: var(--display); font-size: var(--2xl); font-weight: 700; color: var(--t-h); line-height: 1; }
+.city-stat-lbl { display: block; font-size: var(--xs); font-weight: 500; color: rgba(26,25,22,0.65); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.guide-body { max-width: var(--max); margin: 0 auto; padding: 4rem var(--gutter) 5rem; display: grid; grid-template-columns: 200px 1fr; gap: 5rem; align-items: start; }
+.guide-nav { position: sticky; top: 88px; }
+.guide-nav-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--t-s); margin-bottom: 0.75rem; padding-left: 0.75rem; }
+.guide-nav-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.guide-nav-link { display: block; font-size: var(--sm); color: var(--t-s); padding: 0.5rem 0.75rem; border-left: 2px solid var(--border); transition: color 0.2s, border-color 0.2s; line-height: 1.3; }
+.guide-nav-link:hover { color: var(--t-h); border-left-color: var(--gold); }
+.guide-nav-link.active { color: var(--t-h); border-left-color: var(--gold); font-weight: 500; }
+.guide-section { padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+.guide-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.section-eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem; }
+.guide-section h2 { font-family: var(--display); font-size: var(--3xl); color: var(--t-h); margin-bottom: 1.25rem; line-height: 1.2; }
+.guide-section p { font-size: var(--base); color: var(--t-b); line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+.guide-section p:last-of-type { margin-bottom: 0; }
+.transport-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.transport-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 3px; padding: 1.25rem 1.25rem 1.25rem 1rem; border-left: 3px solid var(--gold); }
+.transport-card-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+.transport-card-icon { font-size: 1.1rem; line-height: 1; }
+.transport-card h4 { font-size: var(--sm); font-weight: 600; color: var(--t-h); }
+.transport-card p { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.65; margin: 0; }
+.parks-list { list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0; }
+.park-item { display: flex; gap: 1.1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.park-item:first-child { border-top: 1px solid var(--border); }
+.park-dot { flex-shrink: 0; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; margin-top: 0.55rem; }
+.park-body strong { font-size: var(--base); font-weight: 600; color: var(--t-h); display: block; margin-bottom: 0.2rem; }
+.park-body span { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.65; }
+.schools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.school-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 3px; padding: 1.25rem; }
+.school-type { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--gold); display: block; margin-bottom: 0.35rem; }
+.school-card h4 { font-size: var(--base); font-weight: 600; color: var(--t-h); margin-bottom: 0.3rem; line-height: 1.3; }
+.school-card p { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.6; margin-bottom: 0.75rem; }
+.school-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: var(--xs); color: var(--t-s); border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+.school-link:hover { color: var(--gold); border-color: var(--gold); }
+.nbhd-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.nbhd-pill { font-size: var(--sm); font-weight: 400; color: var(--t-b); padding: 0.5rem 1.1rem; border: 1px solid var(--border); border-radius: 100px; cursor: pointer; background: var(--bg); transition: background 0.2s, color 0.2s, border-color 0.2s; white-space: nowrap; }
+.nbhd-pill:hover { border-color: var(--t-h); color: var(--t-h); }
+.nbhd-pill.active { background: var(--t-h); color: var(--t-light); border-color: var(--t-h); font-weight: 500; }
+.nbhd-panel { display: none; animation: fadeIn 0.25s ease; }
+.nbhd-panel.visible { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.nbhd-card { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.nbhd-card-header { background: var(--bg-dark); padding: 2rem 2rem 1.75rem; position: relative; }
+.nbhd-card-header::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--gold); }
+.nbhd-card-header h3 { font-family: var(--display); font-size: var(--2xl); color: var(--t-light); margin-bottom: 0.6rem; line-height: 1.2; }
+.nbhd-card-header p { font-size: var(--base); color: var(--t-muted); font-weight: 300; line-height: 1.75; margin: 0; max-width: 620px; }
+.nbhd-card-body { padding: 2rem; background: var(--bg-alt); display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.nbhd-detail h4 { font-size: var(--xs); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--t-s); margin-bottom: 0.75rem; }
+.nbhd-detail ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.nbhd-detail ul li { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.55; padding-left: 1rem; position: relative; }
+.nbhd-detail ul li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+.guide-cta { background: var(--bg-dark); padding: 5rem var(--gutter); text-align: center; }
+.guide-cta h2 { font-family: var(--display); font-size: var(--3xl); color: var(--t-light); max-width: 500px; margin: 0.75rem auto 1rem; }
+.guide-cta p { font-size: var(--lg); color: var(--t-muted); font-weight: 300; max-width: 420px; margin: 0 auto 2.5rem; line-height: 1.7; }
+@media (max-width: 1024px) { .guide-body { grid-template-columns: 1fr; gap: 0; } .guide-nav { display: none; } }
+@media (max-width: 768px) { .city-stats-inner { grid-template-columns: 1fr 1fr; } .city-stat-item:nth-child(2) { border-right: none; } .transport-grid, .schools-grid { grid-template-columns: 1fr; } .nbhd-card-body { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../listings.html">Listings</a>
+  <a href="../specialties.html">Specialties</a>
+  <a href="../client-stories.html">Client Stories</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+</div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="../index.html" class="nav-logo"><img src="../brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC"></a>
+  <ul class="nav-links">
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../listings.html">Listings</a></li>
+    <li><a href="../specialties.html">Specialties</a></li>
+    <li><a href="../client-stories.html">Client Stories</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="guide-hero">
+  <div class="wrap">
+    <p class="guide-hero-breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="#">Tri-Cities Guide</a> &nbsp;/&nbsp; Port Coquitlam</p>
+    <h1>Your Guide to Living in Port Coquitlam, BC</h1>
+    <p class="guide-hero-lead">The most genuinely community-spirited city in the Tri-Cities — with a tight-knit downtown, the famous PoCo Trail, and family neighbourhoods that feel like the Lower Mainland used to feel.</p>
+    <div class="guide-hero-tags">
+      <span class="guide-tag">Families &amp; Relocators</span>
+      <span class="guide-tag">SD43 Schools</span>
+      <span class="guide-tag">West Coast Express</span>
+      <span class="guide-tag">Tri-Cities</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="city-stats-bar">
+  <div class="city-stats-inner">
+    <div class="city-stat-item">
+      <span class="city-stat-val">~70K</span>
+      <span class="city-stat-lbl">Population</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">WCE</span>
+      <span class="city-stat-lbl">West Coast Express</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">SD43</span>
+      <span class="city-stat-lbl">School District</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">From Vancouver</span>
+      <span class="city-stat-lbl">~40 minutes</span>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDE BODY -->
+<div class="guide-body">
+
+  <!-- STICKY NAV -->
+  <nav class="guide-nav" aria-label="Page sections">
+    <p class="guide-nav-title">On This Page</p>
+    <ul class="guide-nav-list">
+      <li><a href="#overview" class="guide-nav-link active">About Port Coquitlam</a></li>
+      <li><a href="#demographics" class="guide-nav-link">Demographics</a></li>
+      <li><a href="#getting-around" class="guide-nav-link">Getting Around</a></li>
+      <li><a href="#parks" class="guide-nav-link">Parks &amp; Trails</a></li>
+      <li><a href="#schools" class="guide-nav-link">Schools</a></li>
+      <li><a href="#neighbourhoods" class="guide-nav-link">Neighbourhoods</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="guide-content">
+
+    <!-- ABOUT -->
+    <div id="overview" class="guide-section reveal">
+      <p class="section-eyebrow">About the City</p>
+      <h2>Why Families Choose Port Coquitlam</h2>
+      <p>Port Coquitlam — universally called PoCo by locals — is the smallest of the Tri-Cities by area but consistently ranks as one of the most liveable communities in Metro Vancouver for families. It has something that's genuinely rare: a real downtown. McAllister Avenue and the Leigh Square community hub give PoCo an actual town centre where people know each other, local businesses thrive, and community events happen on a human scale.</p>
+      <p>PoCo draws families who want a detached home with a real yard, good schools, and a community that still feels like a neighbourhood — without paying Coquitlam or Port Moody prices. The city has generally more affordable housing than its neighbours while sharing the same school district, the same trail system, and the same access to the Tri-Cities lifestyle.</p>
+      <p>The Traboulay PoCo Trail — a 25-kilometre paved loop around the entire city — is perhaps the clearest expression of PoCo's character: it was a community-led project built over decades, and it remains a source of enormous local pride. On a sunny weekend, it feels like the whole city is out on that trail.</p>
+    </div>
+
+    <!-- DEMOGRAPHICS -->
+    <div id="demographics" class="guide-section reveal">
+      <p class="section-eyebrow">Who Lives Here</p>
+      <h2>Community &amp; Demographics</h2>
+      <p>Port Coquitlam has a historically blue-collar identity rooted in its working-class origins as a railway and industrial town — and while the workforce has shifted substantially toward professional and trades households, that community-over-status ethos has persisted. PoCo families tend to be deeply engaged in local sports, schools, and community organizations.</p>
+      <p>The city has become increasingly diverse over the past two decades. South Asian and Filipino communities have established strong presences, and the school district reflects this with growing multilingual programs. The population skews toward young and mid-career families who've made a deliberate choice for space and community over proximity to Vancouver.</p>
+      <p>PoCo is also notable for its arts community — the Terry Fox Library, Leigh Square, and the PoCo Heritage & Cultural Society maintain a genuine cultural scene for a city of its size. The birthplace of Terry Fox, PoCo holds that legacy with real pride, and the annual Terry Fox Run started here in 1981.</p>
+    </div>
+
+    <!-- GETTING AROUND -->
+    <div id="getting-around" class="guide-section reveal">
+      <p class="section-eyebrow">Transportation</p>
+      <h2>Getting Around Port Coquitlam</h2>
+      <p>PoCo is primarily a car-dependent city, but it has commuter rail access via the West Coast Express that makes downtown Vancouver commuting very viable during peak hours. The city's flat terrain and the PoCo Trail network also make cycling a practical option within the city.</p>
+      <div class="transport-grid">
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚂</span><h4>West Coast Express</h4></div>
+          <p>Port Coquitlam station provides express commuter rail to Waterfront in ~42 min. Peak-hour service only (morning eastbound, evening westbound). Excellent for Vancouver-bound commuters.</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚌</span><h4>TransLink Bus to SkyTrain</h4></div>
+          <p>Bus routes connect PoCo to Coquitlam Central SkyTrain station (Millennium Line) for non-peak transit. The trip to Coquitlam Central takes roughly 15–20 min by bus.</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚗</span><h4>Lougheed Hwy / Hwy 7</h4></div>
+          <p>Lougheed Highway (Hwy 7) runs through the city, providing direct car access to Coquitlam, Burnaby, and Vancouver. Golden Ears Bridge south connects to Pitt Meadows and Maple Ridge.</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚲</span><h4>PoCo Trail (Cycling)</h4></div>
+          <p>The 25km Traboulay PoCo Trail is paved and loops the entire city, connecting major parks and residential areas. Many residents commute within the city by bike using the trail.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARKS -->
+    <div id="parks" class="guide-section reveal">
+      <p class="section-eyebrow">Green Spaces</p>
+      <h2>Parks &amp; Trails</h2>
+      <p>PoCo's trail network is its crown jewel. The Traboulay PoCo Trail system — built over decades through community effort — connects virtually every corner of the city on a paved, multi-use path. Combined with Colony Farm and the Pitt River dyke trails, PoCo offers more trail variety per resident than almost anywhere in Metro Vancouver.</p>
+      <ul class="parks-list">
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Traboulay PoCo Trail</strong>
+            <span>The city's defining feature — a 25-kilometre paved loop encircling Port Coquitlam along rivers, dykes, and forest edges. Ideal for cycling, jogging, and dog walking. Locals use sections of it daily; doing the full loop is a PoCo rite of passage.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Colony Farm Regional Park</strong>
+            <span>A flat, open regional park shared with Coquitlam, spanning both sides of the Coquitlam River. Exceptional for birdwatching (great blue herons, eagles, waterfowl) and peaceful nature walks. A completely different character from the forested trails elsewhere.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Gates Park</strong>
+            <span>A large active-use park in the Riverwood neighbourhood with sports fields, ball diamonds, a spray park for kids, and event space. One of the most-used parks in the city, especially on summer weekends when families from Fremont gather here.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Leigh Square &amp; Lions Park</strong>
+            <span>Leigh Square is PoCo's civic plaza — a gathering space for farmers markets, concerts, and community events in the heart of downtown. Lions Park adjacent to the civic core is a pleasant green space within walking distance of the West Coast Express station.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Pitt River Dyke Trails</strong>
+            <span>Accessible from the south end of PoCo, the Pitt River dyke offers flat, wide trail walking with views across the Pitt Meadows delta and Golden Ears. A favourite for families with strollers and cyclists wanting long, flat routes.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Birchland Manor Trail System</strong>
+            <span>A network of forested trails in the northwest of PoCo, connecting into the Coquitlam trail system. More natural and less manicured than the PoCo Trail — popular with mountain bikers and trail runners.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SCHOOLS -->
+    <div id="schools" class="guide-section reveal">
+      <p class="section-eyebrow">Education</p>
+      <h2>Schools in Port Coquitlam</h2>
+      <p>Port Coquitlam is served by School District 43 (SD43), the same district as Coquitlam and Port Moody. The city has strong secondary schools and a well-regarded Catholic independent school option. French Immersion is available at the elementary level through SD43.</p>
+      <div class="schools-grid">
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Terry Fox Secondary</h4>
+          <p>Named for Port Coquitlam's most famous son — Terry Fox was born and grew up in PoCo. Strong academic and athletic programs. Serves central and north PoCo neighbourhoods.</p>
+          <a href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Riverside Secondary</h4>
+          <p>Serves the south and Riverwood areas of Port Coquitlam. Offers a range of academic and applied programs, with strong sports and arts involvement.</p>
+          <a href="https://www.sd43.bc.ca/school/riverside/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Secondary · Independent (Catholic)</span>
+          <h4>Archbishop Carney Regional Secondary</h4>
+          <p>A well-regarded Catholic independent secondary serving families across the Tri-Cities. Known for strong academics, community values, and a welcoming culture for families of all backgrounds.</p>
+          <a href="https://www.acrss.org/" target="_blank" rel="noopener" class="school-link">archbishopcarney.com ↗</a>
+        </div>
+     </div>
+      <p style="margin-top:1.25rem;font-size:var(--sm);color:var(--t-s);font-weight:300">For full elementary school catchment maps and specialty program information, visit <a href="https://www.sd43.bc.ca" target="_blank" rel="noopener" style="color:var(--t-s);border-bottom:1px solid var(--border)">sd43.bc.ca</a></p>
+    </div>
+
+    <!-- NEIGHBOURHOODS -->
+    <div id="neighbourhoods" class="guide-section reveal">
+      <p class="section-eyebrow">Neighbourhood Guide</p>
+      <h2>Port Coquitlam's Key Neighbourhoods</h2>
+      <p>PoCo is made up of a range of neighbourhoods, each with its own character, home styles, and everyday lifestyle. Explore below to see which one fits you best.</p>
+
+      <div class="nbhd-pills">
+        <button class="nbhd-pill active" data-target="central-poco">Central PoCo / Downtown</button>
+        <button class="nbhd-pill" data-target="riverwood">Riverwood (Fremont)</button>
+        <button class="nbhd-pill" data-target="north-port-coquitlam">North Port Coquitlam</button>
+        <button class="nbhd-pill" data-target="citadel-heights">Citadel Heights</button>
+      </div>
+
+      <div class="nbhd-panels">
+
+        <div class="nbhd-panel visible" id="panel-central-poco">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Central PoCo / Downtown</h3>
+              <p>The civic and commercial heart of Port Coquitlam — a walkable downtown with community events, independent businesses, the West Coast Express station, and a genuine neighbourhood feel that's rare in Metro Vancouver.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>McAllister Ave is a real working main street with local shops, restaurants, and services - not a strip mall</li>
+                  <li>Leigh Square: civic plaza hosting farmers markets, live music, and seasonal events — the community gathers here</li>
+                  <li>West Coast Express: PoCo station is walking distance from central neighbourhoods — downtown Vancouver in ~42 min</li>
+                  <li>New Port Coquitlam Community Centre alongisde Terry Fox Library and Leigh Square Arts Centre bring genuine cultural infrastructure to the area</li>
+                  <li>Home to the annual PoCo Grand Prix cycling race — streets close for a real competitive cycling event</li>
+                  <li>Gates Park is the neighbourhood's anchor — sports fields, splash park, and event spaces all within walking distance</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Mix of older detached homes (1970s to 1990s), newer infill, mostly in form of newer townhomes and low storey apartments</li>
+                  <li>Walkable to almost everything PoCo has to offer — rare for a Tri-Cities community</li>
+                  <li>More affordable entry point than Riverwood or Oxford Heights</li>
+                  <li>Active community association and neighbourhood programs throughout the year</li>
+                  <li>Mostly flat terrain — cycling and walking to school is practical for kids</li>
+                  <li>Riverside Secondary catchment — active school community</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nbhd-panel" id="panel-riverwood">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Riverwood (Fremont)</h3>
+              <p>Port Coquitlam's master-planned south end — a newer, spacious neighbourhood on the Pitt River flats where families find larger homes, great parks, and a community built around outdoor living.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Fremont Village anchors the area with shops, groceries, cafes, and everyday essentials — everything you need is within minutes</li>
+                  <li>Nature is built into daily life with Traboulay PoCo Trail, Blakeburn Lagoon, and Minnekhada Regional Park all close by</li>
+                  <li>Big-box convenience nearby — Costco, Walmart, Home Depot, and more without long drives</li>
+                  <li>Quiet, family-oriented streets with a thoughtful mix of townhomes and detached homes</li>
+                  <li>Pitt River dykes and trail systems offer flat, scenic routes for biking, jogging, and weekend walks</li>
+                  <li>Well-connected location with quick access to Pitt River Bridge, Coquitlam Centre, and SkyTrain</li>
+                 
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Primarily newer development compared to older PoCo neighbourhoods — popular with young families and upsizers</li>
+                  <li>Strong access to schools including Terry Fox Secondary School and nearby elementary options</li>
+                  <li>Higher price point than central PoCo but still more affordable than comparable Coquitlam</li>
+                  <li>More suburban feel compared to Downtown PoCo — quieter, less foot traffic, more space</li>
+                  <li>Excellent for outdoor-oriented families who want nature and convenience in one place</li>
+                  <li>Flooding history in low-lying areas — worth checking specific addresses near the river</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div class="nbhd-panel" id="panel-citadel-heights">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Citadel Heights</h3>
+              <p>A quiet, elevated neighbourhood known for its space, views, and sense of privacy.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Elevated hillside setting with scenic Fraser River and mountain views — one of the few PoCo pockets with real elevation</li>
+                  <li>Quiet, tucked-away streets with minimal through traffic — feels private compared to most of Port Coquitlam</li>
+                  <li>Strong connection to nature with trails, greenbelts, and parks integrated into the neighbourhood</li>
+                  <li>Primarily detached homes on larger lots, and larger townhomes offering more space, and a true suburban feel</li>
+                  <li>Quick access to Mary Hill Bypass and Highway 1 — ideal for commuters heading to Burnaby, Surrey, or beyond</li>
+                  <li>A hidden pocket that feels removed from the city while still being minutes to daily essentials</li>
+                 
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Popular with upsizers and long-term homeowners looking for space and stability</li>
+                  <li>School catchments include Citadel Middle School and Riverside Secondary School</li>
+                  <li>Larger homes and lot sizes compared to Riverwood, Glenwood, or Central PoCo</li>
+                  <li>Less walkable for errands — most trips are a short drive</li>
+                  <li>Hilly terrain — great for views, but something to consider for day-to-day walkability</li>
+                  <li>Smaller inventory as compared to other areas and so homes here tend to be tightly held and less frequently available</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nbhd-panel" id="panel-north-port-coquitlam">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>North Port Coquitlam (Woodland Acres, Glenwood, Oxford Heights)</h3>
+              <p>Right Next to Coquitlam Centre… without Paying for It.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Mostly closer to Coquitlam Centre with full access to shopping, dining, and transit without paying Coquitlam pricing</li>
+                  <li>Close to Coquitlam skytrain stations that offer easier connection to Downtown Vancouver</li>
+                  <li>Steps from Lafarge Lake and Town Centre Park — one of the best lifestyle hubs in the tri-Cities</li>
+                  <li>Larger lots with more established, tree-lined streets that feel quieter and more lived-in than newer master-planned areas</li>
+                  <li>Everyday convenience along Lougheed Hwy and Coast Meridian — groceries, services, and essentials all nearby</li>
+                  <li>Strategic location with quick access to Coquitlam, Port Moody, and Highway 1 corridors</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Mix of older detached homes (1960s to 1980s), and increasing infill redevelopment - duplexes & triplexes</li>
+                  <li>More attainable entry point compared to Coquitlam Centre and Burke Mountain</li>
+                  <li>Strong school access including Riverside Secondary School and Terry Fox Secondary School</li>
+                  <li>Highly practical for commuters — transit + driving options in all directions</li>
+                  <li>Less dense, more space — ideal for families wanting room without leaving central locations</li>
+                  <li>Consistent demand from both end-users and investors due to location and long-term upside</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /guide-content -->
+</div><!-- /guide-body -->
+
+<!-- CTA -->
+<section class="guide-cta">
+  <span class="section-label dark-label reveal">Port Coquitlam Specialist</span>
+  <h2 class="reveal">Thinking About Making the Move?</h2>
+  <p class="reveal">PoCo is often underestimated — and that's part of what makes it a great find. I know every street in this city and can tell you exactly which pockets suit your family. No pressure, just straight advice.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap" class="reveal">
+    <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-gold">Book a Free Call</a>
+    <a href="../contact.html" class="btn btn-outline" style="border-color:rgba(242,237,227,0.25);color:var(--t-light)">Send a Message</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+        <p class="footer-tagline">Real Estate. Real Advice. Real Results.</p>
+        <p>Serving buyers, sellers, and investors across the Tri-Cities — Coquitlam, Port Coquitlam, and Port Moody.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/rezoningrealtor/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8" target="_blank" rel="noopener" aria-label="Realtor.ca">R•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../listings.html">Listings</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tri-Cities Guides</h4>
+        <ul>
+          <li><a href="coquitlam.html">Coquitlam</a></li>
+          <li><a href="port-coquitlam.html">Port Coquitlam</a></li>
+          <li><a href="port-moody.html">Port Moody</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">📞 <a href="tel:+16043620362">(604) 362-0362</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+          <div class="footer-contact-item">📍 Coquitlam, BC</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ravi Arora Personal Real Estate Corporation (PREC*) | All Rights Reserved<br>Coldwell Banker Universe Realty | Real Estate Board of Greater Vancouver</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !mobileNav.contains(e.target)) mobileNav.classList.remove('open'); });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.nbhd-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.nbhd-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nbhd-panel').forEach(p => p.classList.remove('visible'));
+    pill.classList.add('active');
+    const target = document.getElementById('panel-' + pill.dataset.target);
+    if (target) target.classList.add('visible');
+  });
+});
+const sections = document.querySelectorAll('.guide-section[id]');
+const navLinks = document.querySelectorAll('.guide-nav-link');
+const scrollObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + id); });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => scrollObs.observe(s));
+</script>
+</body>
+</html>

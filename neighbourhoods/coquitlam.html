@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving to Coquitlam BC | Neighbourhoods, Schools & Community Guide</title>
+<meta name="description" content="Your complete guide to living in Coquitlam — schools, parks, transportation, demographics, and a breakdown of every major neighbourhood from Burke Mountain to Maillardville. Written by a local realtor who knows every street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+/* ── GUIDE HERO ── */
+.guide-hero { background: var(--bg-dark); padding: 9rem var(--gutter) 5rem; }
+.guide-hero-breadcrumb { font-size: var(--xs); color: rgba(242,237,227,0.45); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.guide-hero-breadcrumb a { color: rgba(242,237,227,0.45); }
+.guide-hero-breadcrumb a:hover { color: var(--gold); }
+.guide-hero h1 { font-family: var(--display); font-size: clamp(2.25rem,5vw,3.5rem); color: var(--t-light); max-width: 700px; line-height: 1.15; margin-bottom: 1.25rem; }
+.guide-hero-lead { font-size: var(--lg); color: var(--t-muted); font-weight: 300; max-width: 560px; line-height: 1.7; margin-bottom: 2.5rem; }
+.guide-hero-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.guide-tag { font-size: var(--xs); font-weight: 500; color: var(--t-muted); background: rgba(242,237,227,0.08); border: 1px solid rgba(242,237,227,0.14); border-radius: 100px; padding: 0.35rem 0.85rem; letter-spacing: 0.04em; }
+
+/* ── CITY STATS BAR ── */
+.city-stats-bar { background: var(--gold); padding: 0; }
+.city-stats-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: repeat(4,1fr); }
+.city-stat-item { padding: 1.25rem 1rem; text-align: center; border-right: 1px solid rgba(26,25,22,0.15); }
+.city-stat-item:last-child { border-right: none; }
+.city-stat-val { display: block; font-family: var(--display); font-size: var(--2xl); font-weight: 700; color: var(--t-h); line-height: 1; }
+.city-stat-lbl { display: block; font-size: var(--xs); font-weight: 500; color: rgba(26,25,22,0.65); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── GUIDE BODY ── */
+.guide-body { max-width: var(--max); margin: 0 auto; padding: 4rem var(--gutter) 5rem; display: grid; grid-template-columns: 200px 1fr; gap: 5rem; align-items: start; }
+
+/* ── STICKY NAV ── */
+.guide-nav { position: sticky; top: 88px; }
+.guide-nav-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--t-s); margin-bottom: 0.75rem; padding-left: 0.75rem; }
+.guide-nav-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.guide-nav-link { display: block; font-size: var(--sm); color: var(--t-s); padding: 0.5rem 0.75rem; border-left: 2px solid var(--border); transition: color 0.2s, border-color 0.2s, font-weight 0.2s; line-height: 1.3; }
+.guide-nav-link:hover { color: var(--t-h); border-left-color: var(--gold); }
+.guide-nav-link.active { color: var(--t-h); border-left-color: var(--gold); font-weight: 500; }
+
+/* ── SECTIONS ── */
+.guide-content { }
+.guide-section { padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+.guide-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.section-eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem; }
+.guide-section h2 { font-family: var(--display); font-size: var(--3xl); color: var(--t-h); margin-bottom: 1.25rem; line-height: 1.2; }
+.guide-section p { font-size: var(--base); color: var(--t-b); line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+.guide-section p:last-of-type { margin-bottom: 0; }
+
+/* ── TRANSPORT CARDS ── */
+.transport-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.transport-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 3px; padding: 1.25rem 1.25rem 1.25rem 1rem; border-left: 3px solid var(--gold); }
+.transport-card-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+.transport-card-icon { font-size: 1.1rem; line-height: 1; }
+.transport-card h4 { font-size: var(--sm); font-weight: 600; color: var(--t-h); }
+.transport-card p { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.65; margin: 0; }
+
+/* ── PARKS LIST ── */
+.parks-list { list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0; }
+.park-item { display: flex; gap: 1.1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.park-item:first-child { border-top: 1px solid var(--border); }
+.park-dot { flex-shrink: 0; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; margin-top: 0.55rem; }
+.park-body strong { font-size: var(--base); font-weight: 600; color: var(--t-h); display: block; margin-bottom: 0.2rem; }
+.park-body span { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.65; }
+
+/* ── SCHOOLS GRID ── */
+.schools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.school-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 3px; padding: 1.25rem; }
+.school-type { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--gold); display: block; margin-bottom: 0.35rem; }
+.school-card h4 { font-size: var(--base); font-weight: 600; color: var(--t-h); margin-bottom: 0.3rem; line-height: 1.3; }
+.school-card p { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.6; margin-bottom: 0.75rem; }
+.school-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: var(--xs); color: var(--t-s); border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+.school-link:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ── NEIGHBOURHOOD SECTION ── */
+.nbhd-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.nbhd-pill { font-size: var(--sm); font-weight: 400; color: var(--t-b); padding: 0.5rem 1.1rem; border: 1px solid var(--border); border-radius: 100px; cursor: pointer; background: var(--bg); transition: background 0.2s, color 0.2s, border-color 0.2s; white-space: nowrap; }
+.nbhd-pill:hover { border-color: var(--t-h); color: var(--t-h); }
+.nbhd-pill.active { background: var(--t-h); color: var(--t-light); border-color: var(--t-h); font-weight: 500; }
+
+.nbhd-panels { }
+.nbhd-panel { display: none; animation: fadeIn 0.25s ease; }
+.nbhd-panel.visible { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.nbhd-card { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.nbhd-card-header { background: var(--bg-dark); padding: 2rem 2rem 1.75rem; position: relative; }
+.nbhd-card-header::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--gold); }
+.nbhd-card-header h3 { font-family: var(--display); font-size: var(--2xl); color: var(--t-light); margin-bottom: 0.6rem; line-height: 1.2; }
+.nbhd-card-header p { font-size: var(--base); color: var(--t-muted); font-weight: 300; line-height: 1.75; margin: 0; max-width: 620px; }
+.nbhd-card-body { padding: 2rem; background: var(--bg-alt); display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.nbhd-detail h4 { font-size: var(--xs); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--t-s); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem; }
+.nbhd-detail ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.nbhd-detail ul li { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.55; padding-left: 1rem; position: relative; }
+.nbhd-detail ul li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+
+/* ── CTA SECTION ── */
+.guide-cta { background: var(--bg-dark); padding: 5rem var(--gutter); text-align: center; }
+.guide-cta h2 { font-family: var(--display); font-size: var(--3xl); color: var(--t-light); max-width: 500px; margin: 0.75rem auto 1rem; }
+.guide-cta p { font-size: var(--lg); color: var(--t-muted); font-weight: 300; max-width: 420px; margin: 0 auto 2.5rem; line-height: 1.7; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) { .guide-body { grid-template-columns: 1fr; gap: 0; } .guide-nav { display: none; } }
+@media (max-width: 768px) { .city-stats-inner { grid-template-columns: 1fr 1fr; } .city-stat-item:nth-child(2) { border-right: none; } .transport-grid, .schools-grid { grid-template-columns: 1fr; } .nbhd-card-body { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../listings.html">Listings</a>
+  <a href="../specialties.html">Specialties</a>
+  <a href="../client-stories.html">Client Stories</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+</div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="../index.html" class="nav-logo"><img src="../brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC"></a>
+  <ul class="nav-links">
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../listings.html">Listings</a></li>
+    <li><a href="../specialties.html">Specialties</a></li>
+    <li><a href="../client-stories.html">Client Stories</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="guide-hero">
+  <div class="wrap">
+    <p class="guide-hero-breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="#">Tri-Cities Guide</a> &nbsp;/&nbsp; Coquitlam</p>
+    <h1>Your Guide to Living in Coquitlam, BC</h1>
+    <p class="guide-hero-lead">One of Metro Vancouver’s fastest growing cities and just minutes from Vancouver, Coquitlam is where city access meets nature - offering SkyTrain convenience, mountain trails, rich French heritage, and family friendly neighbourhoods that feel right.</p>
+    <div class="guide-hero-tags">
+      <span class="guide-tag">Families &amp; Relocators</span>
+      <span class="guide-tag">SD43 Schools</span>
+      <span class="guide-tag">Millennium SkyTrain</span>
+      <span class="guide-tag">Tri-Cities</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="city-stats-bar">
+  <div class="city-stats-inner">
+    <div class="city-stat-item">
+      <span class="city-stat-val">~180K</span>
+      <span class="city-stat-lbl">Population</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">4</span>
+      <span class="city-stat-lbl">SkyTrain Stations</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">SD43</span>
+      <span class="city-stat-lbl">School District</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">From Vancouver</span>
+      <span class="city-stat-lbl">~40 minutes</span>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDE BODY -->
+<div class="guide-body">
+
+  <!-- STICKY NAV -->
+  <nav class="guide-nav" aria-label="Page sections">
+    <p class="guide-nav-title">On This Page</p>
+    <ul class="guide-nav-list">
+      <li><a href="#overview" class="guide-nav-link active">About Coquitlam</a></li>
+      <li><a href="#demographics" class="guide-nav-link">Demographics</a></li>
+      <li><a href="#getting-around" class="guide-nav-link">Getting Around</a></li>
+      <li><a href="#parks" class="guide-nav-link">Parks &amp; Trails</a></li>
+      <li><a href="#schools" class="guide-nav-link">Schools</a></li>
+      <li><a href="#neighbourhoods" class="guide-nav-link">Neighbourhoods</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="guide-content">
+
+    <!-- ABOUT -->
+    <div id="overview" class="guide-section reveal">
+      <p class="section-eyebrow">About the City</p>
+      <h2>Why Families Choose Coquitlam</h2>
+      <p>Just minutes from Vancouver, Coquitlam is one of Metro Vancouver’s fastest growing cities, home to nearly 180,000 residents and served by four SkyTrain stations - Burquitlam station, Coquitlam Central station, Lincoln Station, and Lafarge Lake-Douglas station. It offers a rare balance of city access and everyday livability, where commuting convenience connects seamlessly with parks, space, and a strong sense of community.</p>
+      <p>What makes Coquitlam stand out is its range of neighbourhoods. Burquitlam continues to grow as a walkable, transit-focused hub, while Burke Mountain attracts families looking for newer homes and direct access to expansive trail networks. Established areas like Coquitlam Centre and Westwood Plateau are also very popular and provide a mix of schools, parks, and long-standing community appeal.</p>
+      <p>Coquitlam also carries a unique cultural identity through Maillardville, British Columbia’s historic French-Canadian neighbourhood, known for its distinct character and deep-rooted community feel that sets it apart within the Vancouver region.</p>
+    </div>
+
+    <!-- DEMOGRAPHICS -->
+    <div id="demographics" class="guide-section reveal">
+      <p class="section-eyebrow">Who Lives Here</p>
+      <h2>Community &amp; Demographics</h2>
+      <p>Coquitlam is one of Metro Vancouver's most multicultural cities, with over 50% of residents identifying as visible minorities — primarily Chinese, South Asian, Korean, and Persian communities who have established strong roots here over two and three generations. The cultural diversity is reflected in the restaurant scene, community events, and the international programs available through SD43.</p>
+      <p>The population skews family oriented, with a strong contingent of young households (30s to 40s) who have moved out from Vancouver and Burnaby seeking more space and better value. The city is growing rapidly, particularly Burke Mountain area, that attracts a mix of tech professionals commuting to Burnaby's office corridors, healthcare workers from Eagle Ridge Hospital, and longtime residents who have been here for decades.</p>
+      <p>Douglas College in Coquitlam Centre brings a younger student population, and the ongoing densification in Coquitlam along the SkyTrain corridor is attracting more first-time buyers and renters from across the region.</p>
+    </div>
+
+    <!-- GETTING AROUND -->
+    <div id="getting-around" class="guide-section reveal">
+      <p class="section-eyebrow">Transportation</p>
+      <h2>Getting Around Coquitlam</h2>
+      <p>Coquitlam has the best transit access of the three tri-Cities, with four Millennium Line SkyTrain stations inside city limits. The trip to Waterfront Station in downtown Vancouver takes roughly 45–50 minutes with a transfer at Commercial–Broadway. For daily commuters, the SkyTrain is genuinely viable — particularly for those living in Burquitlam or near Coquitlam Centre.</p>
+      <div class="transport-grid">
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚇</span><h4>SkyTrain (Millennium Line)</h4></div>
+          <p>Four stations: Burquitlam, Lincoln, Coquitlam Central, and Lafarge Lake-Douglas. Connects directly to Millennium Line and downtown Vancouver. ~45 min to Waterfront.</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚌</span><h4>TransLink Bus Network</h4></div>
+          <p>Extensive bus coverage across the city, connecting to SkyTrain stations and across the tri-Cities. Coquitlam Central is a major bus exchange hub.</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚗</span><h4>Lougheed Hwy / Hwy 1</h4></div>
+          <p>Easy car access to Highway 1 and Lougheed (Highway 7). Convenient for commuting to Burnaby, Surrey, or Langley. Expect peak hour congestion on Lougheed Highway at Pinetree way and Brunette Ave from Highway 1 .</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚂</span><h4>West Coast Express</h4></div>
+          <p>The Coquitlam Central WCE station provides peak-hour express service to downtown Vancouver in ~35 min. Popular with Mission/Maple Ridge commuters passing through.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARKS -->
+    <div id="parks" class="guide-section reveal">
+      <p class="section-eyebrow">Green Spaces</p>
+      <h2>Parks &amp; Trails</h2>
+      <p>Coquitlam has more green space than almost any city its size in Metro Vancouver. Between Mundy Park, the river trail systems, and direct access to the Burke Mountain backcountry, outdoor life here is exceptional.</p>
+      <ul class="parks-list">
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Mundy Park</strong>
+            <span>Coquitlam's crown jewel — 177 hectares of old-growth forest, two lakes (Mundy Lake and Lost Lake), kilometres of trails, and sports fields. One of the largest urban parks in Metro Vancouver. Incredibly well-used by families year-round.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Burke Mountain Natural Area</strong>
+            <span>Thousands of acres of undeveloped forest directly adjacent to the Burke Mountain neighbourhood. Trail networks for hiking, mountain biking, and snowshoeing. Families in Burke Mountain often walk directly from their backyards into the trails.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Town Centre Park / Lafarge Lake</strong>
+            <span>The civic heart of Coquitlam Centre — Lafarge Lake hosts the Canada day fireworks and annual Lights at Lafarge in winter (beloved local traditions), and the park surrounds City Hall with walking paths, a splash pad, and picnic areas very popular year around. Adjacent to the Lafarge-Douglas skytrain station.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Coquitlam River Trail</strong>
+            <span>A paved multi-use trail running along the Coquitlam River connecting to the PoCo Trail, Colony Farm, and Pitt Meadows. Popular with cyclists, joggers, and dog walkers. Connects north to south through the city.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Hoy-Scott Greenway</strong>
+            <span>A linear trail connecting Lafarge Lake in Town Centre Park to the Coquitlam River, passing through residential neighbourhoods. Great for casual walks and connecting different parts of the city on foot or bike.</span>
+          </div>
+        </li>
+        
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Colony Farm Regional Park</strong>
+            <span>A flat, open regional park shared with Port Coquitlam, with dyke trails, wildlife viewing (great blue herons, eagles), and views across the Pitt River valley. A quiet contrast to the denser forest trails elsewhere.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SCHOOLS -->
+    <div id="schools" class="guide-section reveal">
+      <p class="section-eyebrow">Education</p>
+      <h2>Schools in Coquitlam</h2>
+      <p>Coquitlam is served by School District 43 (SD43), which is consistently ranked among BC's stronger school districts. The district offers multiple language programs including French Immersion, Mandarin, and Korean, reflecting the city's multicultural character. There are also several independent and faith-based school options.</p>
+      <div class="schools-grid">
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Dr. Charles Best Secondary</h4>
+          <p>Well established and academically strong, known for its French immersion program and consistent reputation in Central Coquitlam.</p>
+          <a href="https://www.sd43.bc.ca/school/charlesbest/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Pinetree Secondary</h4>
+          <p>Highly sought after Town Centre school right by Lafarge Lake, blending strong academics with top tier location and facilities.</p>
+          <a href="https://www.sd43.bc.ca/school/pinetree/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Centennial Secondary</h4>
+          <p>A large, recently rebuilt school offering diverse programs like athletics, tech, and trades focused courses.</p>
+          <a href="https://www.sd43.bc.ca/school/centennial/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Gleneagle Secondary</h4>
+          <p>Known for specialty programs like gifted (TALONS) and outdoor education, appealing to students with focused interests.</p>
+          <a href="https://www.sd43.bc.ca/school/gleneagle/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Burke Mountain Secondary</h4>
+          <p>This future school is currently under construction and expected to open in September 2027. It will serve both middle and secondary students, and a formal name still needs to be decided.</p>
+          <a href="https://www.sd43.bc.ca/CapitalProjects/Pages/BurkeMountain.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Post-Secondary</span>
+          <h4>Douglas College</h4>
+          <p>Located at Coquitlam Centre adjacent to Lafarge Lake-Douglas SkyTrain station. Offers degree programs, diplomas, and university transfer programs. A major presence in the city core.</p>
+          <a href="https://www.douglascollege.ca/" target="_blank" rel="noopener" class="school-link">douglascollege.ca ↗</a>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;font-size:var(--sm);color:var(--t-s);font-weight:300">SD43 also offers Mandarin and Korean bilingual programs, and the district website lists all elementary school catchments: <a href="https://www.sd43.bc.ca" target="_blank" rel="noopener" style="color:var(--t-s);border-bottom:1px solid var(--border)">sd43.bc.ca</a></p>
+    </div>
+
+    <!-- NEIGHBOURHOODS -->
+    <div id="neighbourhoods" class="guide-section reveal">
+      <p class="section-eyebrow">Neighbourhood Guide</p>
+      <h2>Coquitlam's Key Neighbourhoods</h2>
+      <p>Coquitlam is not one neighbourhood — it's a collection of distinct communities, each with its own character, price point, and lifestyle. Click a neighbourhood below to learn what makes it stand out for families considering a move.</p>
+
+      <div class="nbhd-pills">
+        <button class="nbhd-pill active" data-target="maillardville">Maillardville</button>
+        <button class="nbhd-pill" data-target="burke-mountain">Burke Mountain</button>
+        <button class="nbhd-pill" data-target="burquitlam">Burquitlam</button>
+        <button class="nbhd-pill" data-target="coq-centre">Coquitlam Centre</button>
+        <button class="nbhd-pill" data-target="westwood">Westwood Plateau</button>
+      </div>
+
+      <div class="nbhd-panels">
+
+        <div class="nbhd-panel visible" id="panel-maillardville">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Maillardville</h3>
+              <p>BC's oldest French-Canadian community — a neighbourhood with genuine village character, historic charm, and a creative arts scene that makes it unlike anywhere else in the Tri-Cities.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Founded in 1909 by French-Canadian mill workers — BC's oldest Francophone community</li>
+                  <li>Maillardville Community Centre: a vibrant hub bringing together culture, recreation, and community in one of Coquitlam’s most historic neighbourhoods.</li>
+                  <li>Our Lady of Lourdes Parish — a historic Roman Catholic church in the heart of Maillardville</li>
+                  <li>Annual Festival du Bois (March) celebrates French-Canadian music &amp; culture — a genuine neighbourhood tradition</li>
+                  <li>Mackin Park: beautiful neighbourhood park with sports facilities for baseball, softball, cricket</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>French Immersion elementary school catchment — ideal for families entering the FI stream</li>
+                  <li>Mix of older detached homes (larger lots) and newer infill homes - duplex, triplex, fourplex</li>
+                  <li>Strong community associations and neighbourhood events throughout the year</li>
+                  <li>Close to Centennial Secondary school catchment</li>
+                  <li>A more affordable entry point compared to Burke Mountain and Westwood Plateau, with convenient access to Highway 1 for an easy commute to Vancouver</li>
+                  <li>A convenient, walkable hub at the Brunette gateway, with local favourites like Woody’s Pub, Nonna’s Cucina, and My Greek Taverna, plus easy access to IKEA Coquitlam, Cineplex Coquitlam, and T&T Supermarket for everyday living</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nbhd-panel" id="panel-burke-mountain">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Burke Mountain</h3>
+              <p>Coquitlam's newest and fastest-growing neighbourhood — where young families find newer homes, mountain views, and the backcountry trails literally at the end of their street.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Predominantly post-2010 construction — newer homes with modern floor plans and finishes</li>
+                  <li>Direct trail access to Burke Mountain Natural Area from neighbourhood streets</li>
+                  <li>Panoramic views of the Pitt River Valley and Golden Ears from elevated streets</li>
+                  <li>Very family-dominated demographic — lots of young children and strong community feel</li>
+                  <li>Gleneagle Secondary and multiple newer elementary schools serving the area</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Car-dependent — limited transit; bus to Coquitlam Central SkyTrain takes ~15–20 min</li>
+                  <li>Larger lots than most of Metro Vancouver at comparable price points</li>
+                  <li>Development still ongoing in upper sections — check what's being built nearby</li>
+                  <li>Strong resale market driven by consistent family demand</li>
+                  <li>Best neighbourhood in Coquitlam for outdoor-lifestyle families</li>
+                  <li>Drive to SkyTrain takes ~10 min; parking at Coquitlam Central is available</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nbhd-panel" id="panel-burquitlam">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Burquitlam</h3>
+              <p>Coquitlam's transit-connected west end — densifying rapidly around the Burquitlam SkyTrain station, with a mix of older family homes and new condos attracting commuters and first-time buyers.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Burquitlam SkyTrain station (Millennium Line) — one stop from Lougheed Town Centre</li>
+                  <li>Sits on the Burnaby–Coquitlam border; North Road is a lively commercial corridor</li>
+                  <li>Rapid condo development within walking distance of the station</li>
+                  <li>Access to Maillardville's community character just minutes away on foot</li>
+                  <li>Strong Korean and Chinese business community along North Road and Lougheed</li>
+                  <li>Burquitlam Community Association runs active neighbourhood programs</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Best location in Coquitlam for car-free or car-light commuters to Vancouver</li>
+                  <li>Mix of older detached homes (redevelopment potential) and new towers</li>
+                  <li>Dr. Charles Best Secondary catchment — strong academic reputation</li>
+                  <li>Neighbourhood character changing quickly — older streets give way to density</li>
+                  <li>Good value for transit proximity compared to Burnaby equivalents</li>
+                  <li>Mackin Park and Maillardville village walkable from most of the area</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nbhd-panel" id="panel-coq-centre">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Coquitlam Centre</h3>
+              <p>The civic and commercial core of Coquitlam — with Lincoln SkyTrain, Town Centre Park, Douglas College, and a growing high-rise community built around genuine urban amenities.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Lincoln SkyTrain station — walkable to most amenities in the core</li>
+                  <li>Town Centre Park and Lafarge Lake: Lights at Lafarge in December is a beloved annual tradition</li>
+                  <li>Coquitlam Centre Mall and extensive retail/dining options</li>
+                  <li>City Hall, public library, recreation complex, and civic services all in one area</li>
+                  <li>Douglas College campus — cultural and academic energy in the neighbourhood</li>
+                  <li>Centennial Secondary catchment — IB Programme available</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Higher density than other Coquitlam neighbourhoods — primarily condos and townhomes</li>
+                  <li>Excellent walkability score for a suburban Metro Vancouver community</li>
+                  <li>Good for families prioritising transit access and walkable amenities over yard space</li>
+                  <li>Ongoing rapid densification — noise and construction near active sites</li>
+                  <li>Hoy-Scott Greenway provides a pleasant walking/cycling route through the area</li>
+                  <li>Community events in Town Centre Park throughout the year</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nbhd-panel" id="panel-westwood">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Westwood Plateau</h3>
+              <p>Coquitlam's elevated estate neighbourhood — large homes, mature trees, golf course views, and a quieter pace of life that appeals to families who want space and prestige without leaving the city.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Elevated plateau with sweeping views of the valley, inlet, and mountains from upper streets</li>
+                  <li>Westwood Plateau Golf &amp; Country Club — a private club that adds to the area's character</li>
+                  <li>Established mature trees and larger lots (many 7,000–10,000+ sq ft)</li>
+                  <li>Quiet, low-traffic streets — cul-de-sac heavy layout reduces through traffic</li>
+                  <li>Ranch Park adjacency to the south — access to Mundy Park trail system</li>
+                  <li>Pinetree Secondary catchment — consistently strong academic performance</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Car-dependent — no SkyTrain proximity; drive to Coquitlam Central takes ~15 min</li>
+                  <li>Primarily 1990s–2010s construction — well-maintained established homes</li>
+                  <li>Limited new development pressure — neighbourhood character is relatively stable</li>
+                  <li>Higher price point than most of Coquitlam; premium for the views and lot sizes</li>
+                  <li>Strong community associations and neighbourhood watch programs</li>
+                  <li>Excellent for families who want a quieter, more private suburban lifestyle</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /nbhd-panels -->
+    </div><!-- /neighbourhoods section -->
+
+  </div><!-- /guide-content -->
+</div><!-- /guide-body -->
+
+<!-- CTA -->
+<section class="guide-cta">
+  <span class="section-label dark-label reveal">Coquitlam Specialist</span>
+  <h2 class="reveal">Thinking About Making the Move?</h2>
+  <p class="reveal">I've worked in Coquitlam for 10+ years. Whether you're buying your first home in Burquitlam or looking at family homes on Burke Mountain, I'll tell you exactly what you need to know — no pressure.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap" class="reveal">
+    <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-gold">Book a Free Call</a>
+    <a href="../contact.html" class="btn btn-outline" style="border-color:rgba(242,237,227,0.25);color:var(--t-light)">Send a Message</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+        <p class="footer-tagline">Real Estate. Real Advice. Real Results.</p>
+        <p>Serving buyers, sellers, and investors across the Tri-Cities — Coquitlam, Port Coquitlam, and Port Moody.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/rezoningrealtor/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8" target="_blank" rel="noopener" aria-label="Realtor.ca">R•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../listings.html">Listings</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tri-Cities Guides</h4>
+        <ul>
+          <li><a href="coquitlam.html">Coquitlam</a></li>
+          <li><a href="port-coquitlam.html">Port Coquitlam</a></li>
+          <li><a href="port-moody.html">Port Moody</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">📞 <a href="tel:+16043620362">(604) 362-0362</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+          <div class="footer-contact-item">📍 Coquitlam, BC</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ravi Arora Personal Real Estate Corporation (PREC*) | All Rights Reserved<br>Coldwell Banker Universe Realty | Real Estate Board of Greater Vancouver</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav + hamburger
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !mobileNav.contains(e.target)) mobileNav.classList.remove('open'); });
+
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Neighbourhood pills
+document.querySelectorAll('.nbhd-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.nbhd-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nbhd-panel').forEach(p => p.classList.remove('visible'));
+    pill.classList.add('active');
+    const target = document.getElementById('panel-' + pill.dataset.target);
+    if (target) target.classList.add('visible');
+  });
+});
+
+// Active nav highlight on scroll
+const sections = document.querySelectorAll('.guide-section[id]');
+const navLinks = document.querySelectorAll('.guide-nav-link');
+const scrollObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + id); });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => scrollObs.observe(s));
+</script>
+</body>
+</html>

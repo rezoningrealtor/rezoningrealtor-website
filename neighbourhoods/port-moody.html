@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving to Port Moody BC | Neighbourhoods, Schools & Community Guide</title>
+<meta name="description" content="Your complete guide to living in Port Moody — schools, parks, transportation, demographics, and a neighbourhood breakdown of Port Moody Centre, Heritage Mountain, and Anmore. Written by a local Tri-Cities realtor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.guide-hero { background: var(--bg-dark); padding: 9rem var(--gutter) 5rem; }
+.guide-hero-breadcrumb { font-size: var(--xs); color: rgba(242,237,227,0.45); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.guide-hero-breadcrumb a { color: rgba(242,237,227,0.45); }
+.guide-hero-breadcrumb a:hover { color: var(--gold); }
+.guide-hero h1 { font-family: var(--display); font-size: clamp(2.25rem,5vw,3.5rem); color: var(--t-light); max-width: 700px; line-height: 1.15; margin-bottom: 1.25rem; }
+.guide-hero-lead { font-size: var(--lg); color: var(--t-muted); font-weight: 300; max-width: 560px; line-height: 1.7; margin-bottom: 2.5rem; }
+.guide-hero-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.guide-tag { font-size: var(--xs); font-weight: 500; color: var(--t-muted); background: rgba(242,237,227,0.08); border: 1px solid rgba(242,237,227,0.14); border-radius: 100px; padding: 0.35rem 0.85rem; letter-spacing: 0.04em; }
+.city-stats-bar { background: var(--gold); }
+.city-stats-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: repeat(4,1fr); }
+.city-stat-item { padding: 1.25rem 1rem; text-align: center; border-right: 1px solid rgba(26,25,22,0.15); }
+.city-stat-item:last-child { border-right: none; }
+.city-stat-val { display: block; font-family: var(--display); font-size: var(--2xl); font-weight: 700; color: var(--t-h); line-height: 1; }
+.city-stat-lbl { display: block; font-size: var(--xs); font-weight: 500; color: rgba(26,25,22,0.65); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.guide-body { max-width: var(--max); margin: 0 auto; padding: 4rem var(--gutter) 5rem; display: grid; grid-template-columns: 200px 1fr; gap: 5rem; align-items: start; }
+.guide-nav { position: sticky; top: 88px; }
+.guide-nav-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--t-s); margin-bottom: 0.75rem; padding-left: 0.75rem; }
+.guide-nav-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.guide-nav-link { display: block; font-size: var(--sm); color: var(--t-s); padding: 0.5rem 0.75rem; border-left: 2px solid var(--border); transition: color 0.2s, border-color 0.2s; line-height: 1.3; }
+.guide-nav-link:hover { color: var(--t-h); border-left-color: var(--gold); }
+.guide-nav-link.active { color: var(--t-h); border-left-color: var(--gold); font-weight: 500; }
+.guide-section { padding-bottom: 3.5rem; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+.guide-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.section-eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem; }
+.guide-section h2 { font-family: var(--display); font-size: var(--3xl); color: var(--t-h); margin-bottom: 1.25rem; line-height: 1.2; }
+.guide-section p { font-size: var(--base); color: var(--t-b); line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+.guide-section p:last-of-type { margin-bottom: 0; }
+.transport-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.transport-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 3px; padding: 1.25rem 1.25rem 1.25rem 1rem; border-left: 3px solid var(--gold); }
+.transport-card-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+.transport-card-icon { font-size: 1.1rem; line-height: 1; }
+.transport-card h4 { font-size: var(--sm); font-weight: 600; color: var(--t-h); }
+.transport-card p { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.65; margin: 0; }
+.parks-list { list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0; }
+.park-item { display: flex; gap: 1.1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.park-item:first-child { border-top: 1px solid var(--border); }
+.park-dot { flex-shrink: 0; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; margin-top: 0.55rem; }
+.park-body strong { font-size: var(--base); font-weight: 600; color: var(--t-h); display: block; margin-bottom: 0.2rem; }
+.park-body span { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.65; }
+.schools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.school-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 3px; padding: 1.25rem; }
+.school-type { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--gold); display: block; margin-bottom: 0.35rem; }
+.school-card h4 { font-size: var(--base); font-weight: 600; color: var(--t-h); margin-bottom: 0.3rem; line-height: 1.3; }
+.school-card p { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.6; margin-bottom: 0.75rem; }
+.school-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: var(--xs); color: var(--t-s); border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+.school-link:hover { color: var(--gold); border-color: var(--gold); }
+.nbhd-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.nbhd-pill { font-size: var(--sm); font-weight: 400; color: var(--t-b); padding: 0.5rem 1.1rem; border: 1px solid var(--border); border-radius: 100px; cursor: pointer; background: var(--bg); transition: background 0.2s, color 0.2s, border-color 0.2s; white-space: nowrap; }
+.nbhd-pill:hover { border-color: var(--t-h); color: var(--t-h); }
+.nbhd-pill.active { background: var(--t-h); color: var(--t-light); border-color: var(--t-h); font-weight: 500; }
+.nbhd-panel { display: none; animation: fadeIn 0.25s ease; }
+.nbhd-panel.visible { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.nbhd-card { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.nbhd-card-header { background: var(--bg-dark); padding: 2rem 2rem 1.75rem; position: relative; }
+.nbhd-card-header::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--gold); }
+.nbhd-card-header h3 { font-family: var(--display); font-size: var(--2xl); color: var(--t-light); margin-bottom: 0.6rem; line-height: 1.2; }
+.nbhd-card-header p { font-size: var(--base); color: var(--t-muted); font-weight: 300; line-height: 1.75; margin: 0; max-width: 620px; }
+.nbhd-card-body { padding: 2rem; background: var(--bg-alt); display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.nbhd-detail h4 { font-size: var(--xs); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--t-s); margin-bottom: 0.75rem; }
+.nbhd-detail ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.nbhd-detail ul li { font-size: var(--sm); color: var(--t-b); font-weight: 300; line-height: 1.55; padding-left: 1rem; position: relative; }
+.nbhd-detail ul li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+.guide-cta { background: var(--bg-dark); padding: 5rem var(--gutter); text-align: center; }
+.guide-cta h2 { font-family: var(--display); font-size: var(--3xl); color: var(--t-light); max-width: 500px; margin: 0.75rem auto 1rem; }
+.guide-cta p { font-size: var(--lg); color: var(--t-muted); font-weight: 300; max-width: 420px; margin: 0 auto 2.5rem; line-height: 1.7; }
+@media (max-width: 1024px) { .guide-body { grid-template-columns: 1fr; gap: 0; } .guide-nav { display: none; } }
+@media (max-width: 768px) { .city-stats-inner { grid-template-columns: 1fr 1fr; } .city-stat-item:nth-child(2) { border-right: none; } .transport-grid, .schools-grid { grid-template-columns: 1fr; } .nbhd-card-body { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../listings.html">Listings</a>
+  <a href="../specialties.html">Specialties</a>
+  <a href="../client-stories.html">Client Stories</a>
+  <a href="../contact.html">Contact</a>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+</div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="../index.html" class="nav-logo"><img src="../brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC"></a>
+  <ul class="nav-links">
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../listings.html">Listings</a></li>
+    <li><a href="../specialties.html">Specialties</a></li>
+    <li><a href="../client-stories.html">Client Stories</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="guide-hero">
+  <div class="wrap">
+    <p class="guide-hero-breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="#">Tri-Cities Guide</a> &nbsp;/&nbsp; Port Moody</p>
+    <h1>Your Guide to Living in Port Moody, BC</h1>
+    <p class="guide-hero-lead">The Tri-Cities' most distinctive city — a walkable harbour town with craft breweries, Rocky Point Park, world-class trails, and some of the most sought-after schools in Metro Vancouver.</p>
+    <div class="guide-hero-tags">
+      <span class="guide-tag">Families &amp; Relocators</span>
+      <span class="guide-tag">SD43 Schools</span>
+      <span class="guide-tag">Evergreen SkyTrain</span>
+      <span class="guide-tag">Burrard Inlet</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="city-stats-bar">
+  <div class="city-stats-inner">
+    <div class="city-stat-item">
+      <span class="city-stat-val">~35K</span>
+      <span class="city-stat-lbl">Population</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">2</span>
+      <span class="city-stat-lbl">SkyTrain Stations</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">SD43</span>
+      <span class="city-stat-lbl">School District</span>
+    </div>
+    <div class="city-stat-item">
+      <span class="city-stat-val">~40 minutes</span>
+      <span class="city-stat-lbl">From Vancouver</span>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDE BODY -->
+<div class="guide-body">
+
+  <!-- STICKY NAV -->
+  <nav class="guide-nav" aria-label="Page sections">
+    <p class="guide-nav-title">On This Page</p>
+    <ul class="guide-nav-list">
+      <li><a href="#overview" class="guide-nav-link active">About Port Moody</a></li>
+      <li><a href="#demographics" class="guide-nav-link">Demographics</a></li>
+      <li><a href="#getting-around" class="guide-nav-link">Getting Around</a></li>
+      <li><a href="#parks" class="guide-nav-link">Parks &amp; Trails</a></li>
+      <li><a href="#schools" class="guide-nav-link">Schools</a></li>
+      <li><a href="#neighbourhoods" class="guide-nav-link">Neighbourhoods</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="guide-content">
+
+    <!-- ABOUT -->
+    <div id="overview" class="guide-section reveal">
+      <p class="section-eyebrow">About the City</p>
+      <h2>Why Families Choose Port Moody</h2>
+      <p>Port Moody is the Tri-Cities' most character-rich city — and arguably one of the most liveable small cities in all of Metro Vancouver. It sits at the head of the Burrard Inlet, giving it a harbour-town feeling that Coquitlam and Port Coquitlam simply can't replicate. The combination of walkable St. John Street, Rocky Point Park on the inlet, and two SkyTrain stations creates a lifestyle that attracts professionals, families, and creative types alike.</p>
+      <p>The city is well-known for its craft brewery scene — Brewers Row on Murray Street has made Port Moody a destination for the entire Lower Mainland, not just locals. But that same concentration of independent businesses, the Inlet Theatre, the arts centre, and the strong farmers market culture reflects a city that invests in its own quality of life. People who move to Port Moody tend to stay.</p>
+      <p>Port Moody is the smallest of the Tri-Cities but consistently punches above its weight for schools, amenities, and community engagement. It also extends into the Village of Anmore — a distinct municipality on the city's northern edge, known for its larger acreage properties and truly rural feel, drawing families who want something completely different from typical suburban living.</p>
+    </div>
+
+    <!-- DEMOGRAPHICS -->
+    <div id="demographics" class="guide-section reveal">
+      <p class="section-eyebrow">Who Lives Here</p>
+      <h2>Community &amp; Demographics</h2>
+      <p>Port Moody consistently ranks among Metro Vancouver's most educated communities, with a high proportion of households with university degrees and professional occupations. The city attracts technology workers, healthcare professionals, educators, and creative professionals who value the lifestyle Port Moody offers over the closer-to-downtown alternatives in Burnaby or East Vancouver.</p>
+      <p>The city is more ethnically homogeneous than Coquitlam but has become increasingly diverse over the past decade, with growing South Asian, Chinese, and Korean communities — particularly in the Heritage Mountain and Heritage Woods areas. The cultural mix is reflected in the school system and community events.</p>
+      <p>There is a strong arts-and-outdoors identity here: the city attracts families who ski in winter, hike in summer, and care about local culture. The Inlet Theatre, Port Moody Arts Centre, and the public library are well-attended civic institutions. Community engagement is high — if you're moving here, expect neighbours who know each other by name.</p>
+    </div>
+
+    <!-- GETTING AROUND -->
+    <div id="getting-around" class="guide-section reveal">
+      <p class="section-eyebrow">Transportation</p>
+      <h2>Getting Around Port Moody</h2>
+      <p>Port Moody has excellent transit access for a city of its size, with two SkyTrain stations and a West Coast Express stop. The downtown area and SkyTrain stations are walkable from significant portions of the city. Heritage Mountain and Anmore are car-dependent, but most of the city proper has reasonable transit options.</p>
+      <div class="transport-grid">
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚇</span><h4>SkyTrain — Moody Centre</h4></div>
+          <p>Moody Centre station (Evergreen Extension) is the hub of Port Moody's downtown, adjacent to St. John Street. Direct connection to Coquitlam Central and Vancouver. ~45 min to Waterfront.</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚇</span><h4>SkyTrain — Inlet Centre</h4></div>
+          <p>Inlet Centre station connects the Suter Brook / Newport Village area. Walkable for residents of south Port Moody. Same Evergreen Extension as Moody Centre, one stop east toward Coquitlam.</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚂</span><h4>West Coast Express</h4></div>
+          <p>Port Moody station provides peak-hour express commuter rail to Waterfront in ~30 min. Excellent option for daily Vancouver commuters. Station is within the Moody Centre SkyTrain station.</p>
+        </div>
+        <div class="transport-card">
+          <div class="transport-card-head"><span class="transport-card-icon">🚗</span><h4>Murray-Clarke / Hwy 7A</h4></div>
+          <p>The Murray-Clarke Connector (Hwy 7A) provides direct car access east to Coquitlam and west to Burnaby and Vancouver. Heritage Mountain residents rely primarily on driving for daily needs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARKS -->
+    <div id="parks" class="guide-section reveal">
+      <p class="section-eyebrow">Green Spaces</p>
+      <h2>Parks &amp; Trails</h2>
+      <p>Port Moody's geography — sandwiched between the Burrard Inlet and forested mountain slopes — gives it an extraordinary park system for a city of ~35,000. Rocky Point Park alone would be enough to justify the city's reputation, but the Shoreline Trail, Bert Flinn Park, and nearby Belcarra Regional Park make this one of the best-served outdoor communities in Metro Vancouver.</p>
+      <ul class="parks-list">
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Rocky Point Park</strong>
+            <span>Port Moody's crown jewel and one of the most beloved waterfront parks in the entire Lower Mainland. Sits right on the Burrard Inlet with a pier, beach, kayak launch, spray park, climbing structure, and walking paths. On summer evenings, the whole city seems to gather here. Dog-friendly, family-friendly, and stunningly beautiful at sunset.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Shoreline Trail</strong>
+            <span>A 10-kilometre trail running along the southern edge of Port Moody along the Burrard Inlet. Paved and unpaved sections wind through forest and along the water, connecting Rocky Point Park to Old Orchard Park. One of the most scenic urban trails in Metro Vancouver.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Bert Flinn Park</strong>
+            <span>A forested park in the Heritage Mountain area with trails ranging from easy walks to challenging hikes. Very popular with Heritage Mountain and Heritage Woods families who access it directly from their neighbourhoods. Dogs allowed off-leash in designated areas.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Belcarra Regional Park &amp; Sasamat Lake</strong>
+            <span>A short drive from Port Moody, Belcarra is a Metro Vancouver Regional Park with beaches, trails, and the famous Sasamat Lake — consistently the warmest freshwater lake for swimming in the Lower Mainland. White Pine Beach is packed all summer. Effectively Port Moody's backyard lake.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Old Orchard Park</strong>
+            <span>A family park on the Port Moody–Port Coquitlam border with sports fields, a spray pad, playground, and picnic areas. Accessible via the Shoreline Trail. The western terminus of the PoCo Trail system as well, making it a trail connector between the two cities.</span>
+          </div>
+        </li>
+        <li class="park-item">
+          <div class="park-dot"></div>
+          <div class="park-body">
+            <strong>Seaview Park &amp; Ioco Road Trails</strong>
+            <span>A local-favourite forest trail network along the north shore of the Burrard Inlet, connecting to the historic Ioco townsite. Less travelled than Rocky Point, but rewarding for families who want to explore off the beaten path.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SCHOOLS -->
+    <div id="schools" class="guide-section reveal">
+      <p class="section-eyebrow">Education</p>
+      <h2>Schools in Port Moody</h2>
+      <p>Port Moody is served by School District 43 (SD43) and has a strong reputation for its secondary schools. Both Port Moody Secondary and Heritage Woods Secondary are well-regarded, and the city's educated professional demographic tends to drive high parental engagement in school programs. French Immersion is available through SD43 at the elementary level.</p>
+      <div class="schools-grid">
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Port Moody Secondary</h4>
+          <p>Serves Port Moody Centre, Suter Brook, and the lower areas of the city. One of SD43's larger secondaries. Strong IB Programme, arts, and athletics. Located near the SkyTrain corridor.</p>
+          <a href="https://www.sd43.bc.ca/school/portmoody/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Secondary · SD43</span>
+          <h4>Heritage Woods Secondary</h4>
+          <p>Serves the Heritage Mountain and Heritage Woods areas. A newer school with a strong academic culture, reflecting the highly educated demographic of its catchment. Excellent school–community relationship.</p>
+          <a href="https://www.sd43.bc.ca/school/heritagewoods/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Middle · SD43</span>
+          <h4>École Banting Middle School</h4>
+          <p>Serves middle school students in Port Moody. Offers French Immersion and regular programs. The bridge between the elementary and secondary French Immersion streams in the city.</p>
+          <a href="https://www.sd43.bc.ca/school/banting/Pages/default.aspx" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+        <div class="school-card">
+          <span class="school-type">Elementary · SD43</span>
+          <h4>Multiple Elementary Schools</h4>
+          <p>Port Moody has several elementary schools including Seaview, Pleasantside, and Glenayre. Catchment areas vary by neighbourhood. SD43's website has an interactive catchment map.</p>
+          <a href="https://www.sd43.bc.ca" target="_blank" rel="noopener" class="school-link">sd43.bc.ca ↗</a>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;font-size:var(--sm);color:var(--t-s);font-weight:300">French Immersion programs are available from Kindergarten in Port Moody. Check the SD43 site for current school catchments: <a href="https://www.sd43.bc.ca" target="_blank" rel="noopener" style="color:var(--t-s);border-bottom:1px solid var(--border)">sd43.bc.ca</a></p>
+    </div>
+
+    <!-- NEIGHBOURHOODS -->
+    <div id="neighbourhoods" class="guide-section reveal">
+      <p class="section-eyebrow">Neighbourhood Guide</p>
+      <h2>Port Moody's Key Neighbourhoods</h2>
+      <p>Despite being the smallest Tri-City, Port Moody has distinct neighbourhoods — each offering a very different lifestyle. Click each below to understand what makes it special for families.</p>
+
+      <div class="nbhd-pills">
+        <button class="nbhd-pill active" data-target="pm-centre">Port Moody Centre</button>
+        <button class="nbhd-pill" data-target="heritage">Heritage Mountain &amp; Woods</button>
+        <button class="nbhd-pill" data-target="anmore">Anmore</button>
+      </div>
+
+      <div class="nbhd-panels">
+
+        <div class="nbhd-panel visible" id="panel-pm-centre">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Port Moody Centre</h3>
+              <p>The walkable heart of Port Moody — where St. John Street, Brewers Row, Rocky Point Park, SkyTrain, and Suter Brook Village converge to create the most complete urban-meets-nature lifestyle in the Tri-Cities.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>St. John Street is a genuine Main Street — independent restaurants, cafés, boutiques, and services all walkable</li>
+                  <li>Brewers Row on Murray St: multiple craft breweries (Moody Ales, Yellow Dog, Twin Sails, etc.) make PoMo a craft beer destination</li>
+                  <li>Rocky Point Park is a 5–10 minute walk from most of the area — waterfront sunsets are part of daily life here</li>
+                  <li>Moody Centre SkyTrain + West Coast Express both here — best transit access in all of Port Moody</li>
+                  <li>Suter Brook Village and Newport Village: newer mixed-use developments with condos, cafés, grocery, and professional services</li>
+                  <li>Inlet Theatre and Port Moody Arts Centre bring genuine cultural programming to the community</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Mix of condos/townhomes (Suter Brook) and detached homes (older PoMo streets) — something for every family type</li>
+                  <li>Port Moody Secondary catchment — IB Programme available</li>
+                  <li>Walkability score is exceptional by suburban Metro Vancouver standards</li>
+                  <li>Higher price points for detached homes given the lifestyle premium</li>
+                  <li>Shoreline Trail accessible from almost anywhere in the neighbourhood</li>
+                  <li>Dog owners: one of the best neighbourhoods in the Tri-Cities — trails, parks, and dog-friendly patios everywhere</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nbhd-panel" id="panel-heritage">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Heritage Mountain &amp; Heritage Woods</h3>
+              <p>Port Moody's elevated residential sanctuary — panoramic mountain and inlet views, trail access from doorstep, Heritage Woods Secondary, and a quiet neighbourhood character that attracts professional families who want space without sacrificing schools.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Elevated terrain offers dramatic views of the Burrard Inlet, Indian Arm, and the North Shore mountains</li>
+                  <li>Direct trail access to Bert Flinn Park — families hike directly from their neighbourhoods into old-growth forest</li>
+                  <li>Heritage Woods Secondary is the catchment school — strong academic culture and high community engagement</li>
+                  <li>Quiet, low-traffic streets with excellent safety for children walking to school</li>
+                  <li>Newer homes (1990s–2010s) on generous lots — well-maintained with modern infrastructure</li>
+                  <li>Heritage Mountain is slightly older and more established; Heritage Woods is the newer planned community east of it</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Car-dependent for most daily needs — drive to SkyTrain or Moody Centre takes 10–15 min</li>
+                  <li>Premium price point; the view and school catchment command a measurable premium</li>
+                  <li>Strong community culture — Heritage Mountain Community Association runs events year-round</li>
+                  <li>Winter road conditions on elevated streets can be challenging during snow events (rare but happens)</li>
+                  <li>Best Port Moody option for families who prioritise outdoor access and school quality equally</li>
+                  <li>Belcarra and Sasamat Lake are a short drive — the "backyard" expands significantly with a car</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nbhd-panel" id="panel-anmore">
+          <div class="nbhd-card">
+            <div class="nbhd-card-header">
+              <h3>Anmore</h3>
+              <p>A separate village municipality tucked into the forested slopes north of Port Moody — BC's most rural community within Metro Vancouver, where acreage properties, equestrian estates, and old-growth trees define a lifestyle that's unlike anywhere else in the region.</p>
+            </div>
+            <div class="nbhd-card-body">
+              <div class="nbhd-detail">
+                <h4>What Makes It Unique</h4>
+                <ul>
+                  <li>Anmore is its own municipality — with its own Village Council, very low density (1+ acre minimum lots in many areas), and a self-governing community character</li>
+                  <li>Sasamat Lake is essentially the village's backyard — Belcarra Regional Park borders the community directly</li>
+                  <li>Custom estate homes on large lots — properties here are distinctive and often architecturally unique</li>
+                  <li>Horse properties and equestrian facilities are present — a rarity in Metro Vancouver</li>
+                  <li>Exceptionally quiet and private — traffic noise is minimal and night skies are actually dark</li>
+                  <li>Indian River Drive offers some of the most beautiful driving in the Lower Mainland — through old-growth along the creek</li>
+                </ul>
+              </div>
+              <div class="nbhd-detail">
+                <h4>Good to Know for Families</h4>
+                <ul>
+                  <li>Fully car-dependent — no transit, no commercial services within Anmore itself</li>
+                  <li>Drive to Port Moody Centre (SkyTrain, schools, groceries) takes 15–20 min</li>
+                  <li>Children typically attend Port Moody or Heritage Woods Secondary via SD43</li>
+                  <li>Higher price point: acreage properties command significant premiums; entry-level is well above Tri-Cities average</li>
+                  <li>Power outages during storms are more common than in Port Moody proper — generator ownership is common</li>
+                  <li>Best fit for families who genuinely want rural BC living with a Metro Vancouver address</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /guide-content -->
+</div><!-- /guide-body -->
+
+<!-- CTA -->
+<section class="guide-cta">
+  <span class="section-label dark-label reveal">Port Moody Specialist</span>
+  <h2 class="reveal">Thinking About Making the Move?</h2>
+  <p class="reveal">Port Moody is a special place — and finding the right home here takes someone who knows the difference between a Heritage Mountain view lot and a Suter Brook condo. Let's talk about what you're looking for.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap" class="reveal">
+    <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-gold">Book a Free Call</a>
+    <a href="../contact.html" class="btn btn-outline" style="border-color:rgba(242,237,227,0.25);color:var(--t-light)">Send a Message</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+        <p class="footer-tagline">Real Estate. Real Advice. Real Results.</p>
+        <p>Serving buyers, sellers, and investors across the Tri-Cities — Coquitlam, Port Coquitlam, and Port Moody.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/rezoningrealtor/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8" target="_blank" rel="noopener" aria-label="Realtor.ca">R•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../listings.html">Listings</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tri-Cities Guides</h4>
+        <ul>
+          <li><a href="coquitlam.html">Coquitlam</a></li>
+          <li><a href="port-coquitlam.html">Port Coquitlam</a></li>
+          <li><a href="port-moody.html">Port Moody</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">📞 <a href="tel:+16043620362">(604) 362-0362</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+          <div class="footer-contact-item">📍 Coquitlam, BC</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ravi Arora Personal Real Estate Corporation (PREC*) | All Rights Reserved<br>Coldwell Banker Universe Realty | Real Estate Board of Greater Vancouver</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !mobileNav.contains(e.target)) mobileNav.classList.remove('open'); });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.nbhd-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.nbhd-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nbhd-panel').forEach(p => p.classList.remove('visible'));
+    pill.classList.add('active');
+    const target = document.getElementById('panel-' + pill.dataset.target);
+    if (target) target.classList.add('visible');
+  });
+});
+const sections = document.querySelectorAll('.guide-section[id]');
+const navLinks = document.querySelectorAll('.guide-nav-link');
+const scrollObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + id); });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => scrollObs.observe(s));
+</script>
+</body>
+</html>
