@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Stories & Testimonials | Ravi Arora PREC* — Coquitlam Realtor</title>
+<meta name="description" content="Real stories from real clients. Ravi Arora PREC* has helped buyers, sellers, developers, and investors navigate Coquitlam and Tri-Cities real estate successfully.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.page-hero { background: #122B45; padding: 5.5rem var(--gutter) 2rem; text-align: center; }
+.page-hero h1 { color: var(--t-light); max-width: 620px; margin: 0 auto 0.5rem; font-size: clamp(1.375rem, 2.5vw, 1.875rem); }
+.page-hero p { color: var(--t-muted); font-size: var(--sm); font-weight: 300; max-width: 500px; margin: 0 auto; }
+
+/* Story type tabs */
+.story-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.story-tab { font-family: var(--body); font-size: var(--xs); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.5rem 1.25rem; border: 1px solid var(--border); border-radius: 100px; background: var(--bg); color: var(--t-s); cursor: pointer; transition: all 0.2s; }
+.story-tab:hover { border-color: var(--gold); color: var(--t-h); }
+.story-tab.active { background: var(--gold); border-color: var(--gold); color: #1A1916; }
+
+/* Featured story */
+.story-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+.story-featured-quote { font-family: var(--display); font-size: var(--2xl); line-height: 1.35; color: var(--t-h); font-style: normal; margin-bottom: 1.25rem; }
+.story-featured-quote::before { content: '\201C'; color: var(--gold); }
+.story-featured-quote::after { content: '\201D'; color: var(--gold); }
+.story-client-info { display: flex; align-items: center; gap: 1rem; }
+.story-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--gold-dim); border: 2px solid var(--gold-border); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: var(--lg); color: var(--t-h); flex-shrink: 0; }
+.story-client-name { font-weight: 600; color: var(--t-h); font-size: var(--base); }
+.story-client-detail { font-size: var(--xs); color: var(--t-s); margin-top: 0.15rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.story-type-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; background: var(--gold-dim); border: 1px solid var(--gold-border); color: var(--t-h); border-radius: 2px; margin-bottom: 1.25rem; }
+.story-featured-image { border-radius: 2px; overflow: hidden; aspect-ratio: 4/3; }
+.story-featured-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Story cards grid */
+.stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.story-card { background: var(--bg); border: 1px solid var(--border); border-radius: 2px; padding: 2rem; transition: box-shadow 0.3s; }
+.story-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+.story-card .story-type-tag { margin-bottom: 1rem; }
+.story-card-quote { font-family: var(--display); font-size: var(--lg); line-height: 1.5; color: var(--t-h); font-style: normal; margin-bottom: 1.5rem; }
+.story-card-quote::before { content: '\201C'; color: var(--gold); }
+.story-card-quote::after { content: '\201D'; color: var(--gold); }
+.story-card .story-client-info { padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.story-rating { display: flex; gap: 2px; margin-bottom: 0.75rem; }
+.star { color: var(--gold); font-size: 0.9rem; }
+
+/* Stats strip */
+.stats-strip { background: var(--gold); padding: 1.5rem var(--gutter); }
+.stats-strip-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; text-align: center; }
+.strip-stat-num { font-family: var(--display); font-size: var(--2xl); font-weight: 700; color: #1A1916; line-height: 1; }
+.strip-stat-label { font-size: var(--xs); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(26,25,22,0.7); margin-top: 0.25rem; }
+
+/* CTA bar */
+.cta-inline { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; text-align: center; margin-top: 2rem; }
+.cta-inline h3 { font-size: var(--xl); color: var(--t-h); margin-bottom: 0.5rem; }
+.cta-inline p { color: var(--t-b); font-size: var(--sm); font-weight: 300; max-width: 420px; margin: 0 auto 1.25rem; line-height: 1.7; }
+
+@media (max-width: 1024px) { .story-featured { grid-template-columns: 1fr; gap: 2.5rem; } .stories-grid { grid-template-columns: repeat(2, 1fr); } .stats-strip-inner { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .stories-grid { grid-template-columns: 1fr; } .stats-strip-inner { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="listings.html">Listings</a>
+  <a href="specialties.html">Specialties</a>
+  <a href="client-stories.html" class="active">Client Stories</a>
+  <a href="blog.html">Blog</a>
+  <!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> -->
+  <a href="contact.html">Contact</a>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+</div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="index.html" class="nav-logo"><img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC"></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="listings.html">Listings</a></li>
+    <li><a href="specialties.html">Specialties</a></li>
+    <li><a href="client-stories.html" class="active">Client Stories</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><!-- HIDDEN: <a href="deals.html" class="nav-deal">Weekly Deal 🔥</a> --></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <span class="section-label dark-label reveal">Real Results</span>
+  <h1 class="reveal d1">Real stories from people I have helped</h1>
+  <p class="reveal d2">Actual experiences shared by clients, in their own words.</p>
+</section>
+
+<!-- Stats Strip -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div><div class="strip-stat-num">10+</div><div class="strip-stat-label">Years in Market</div></div>
+    <div><div class="strip-stat-num">14</div><div class="strip-stat-label">Dev / Multiplex Projects</div></div>
+    <div><div class="strip-stat-num">20+</div><div class="strip-stat-label">Years Community</div></div>
+    <div><div class="strip-stat-num">★ 5</div><div class="strip-stat-label">Google Rating</div></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- Category tabs -->
+    <div class="story-tabs reveal">
+      <button class="story-tab active" data-tab="all">All Stories</button>
+      <button class="story-tab" data-tab="buyer">Buyers</button>
+      <button class="story-tab" data-tab="seller">Sellers</button>
+      <button class="story-tab" data-tab="developer">Developers</button>
+      <button class="story-tab" data-tab="commercial">Commercial</button>
+    </div>
+
+    <!-- Featured Story 1 -->
+    <div class="story-featured reveal" data-category="seller">
+      <div>
+        <span class="story-type-tag">Sellers</span>
+        <p class="story-featured-quote">Ravi is one of the best realtors I have worked with. You could see how much effort he is putting in doing all the due diligence and negotiating, making sure we are getting the best deal. Would definitely recommend him especially if you are looking for property in TRI-CITIES and neighborhood.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">VC</div>
+          <div>
+            <div class="story-client-name">Vivek C</div>
+            <div class="story-client-detail">Seller — Port Coquitlam</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-featured-image">
+        <img src="Brand_assets/Poco-Townhome.jpg" alt="Townhome Seller story">
+      </div>
+    </div>
+
+    <!-- Featured Story 2 -->
+    <div class="story-featured reveal" data-category="commercial" style="direction:rtl">
+      <div style="direction:ltr">
+        <span class="story-type-tag">Commercial</span>
+        <p class="story-featured-quote">We worked closely with Ravi for leasing retail unit in Langley. Ravi was exceptionally easy to deal with — professional, responsive, and insightful. We always received candid and critical feedback to help our decision making process.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">VB</div>
+          <div>
+            <div class="story-client-name">Vikram B</div>
+            <div class="story-client-detail">Retail Lease — Langley</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-featured-image" style="direction:ltr">
+        <img src="Brand_assets/Langley-DentalOffice.png" alt="Retail Lease story">
+      </div>
+    </div>
+
+    <!-- Stories Grid -->
+    <div class="stories-grid" id="storiesGrid">
+
+      <div class="story-card reveal" data-category="buyer">
+        <span class="story-type-tag">First-Time Buyers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">Ravi reads your mind, he see the future and then he show you what is there. For us, first time buyers, everything was new and confusing… he spend weekends and crazy schedules to clear all the doubts. On line, Phone, Face to face…you ask. Ravi give all the confidence to fell him not just your best realtor but as friend you can ask and talk him with a confidence. When hard things or issues that are beyond his expertise he spend time to research and explains and use all resources to make things happen. Finally we are glad the destiny put him in our way. Thank you so much Sr. Hope we can work with you again.
+.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">JK</div>
+          <div>
+            <div class="story-client-name">Jorge & Kath</div>
+            <div class="story-client-detail">First-Time Buyer — New Westminster</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal d1" data-category="buyer">
+        <span class="story-type-tag">Buyers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">Ravi helped us buy our house in Coquitlam. We had a great experience throughout the buying process.
+He has excellent knowledge of the market and good communication skills which got us a great deal. We highly recommend anyone looking for property in Tri-cities area.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">KA</div>
+          <div>
+            <div class="story-client-name">Kamal Ahuja</div>
+            <div class="story-client-detail">Custom Home Buyers — Coquitlam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal d2" data-category="seller">
+        <span class="story-type-tag">Sellers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">I highly recommend Ravi for your realtor services. He’s not only great at his job, super efficient and knowledgeable, he’s also a compassionate human. 5 stars all the way!.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">SK</div>
+          <div>
+            <div class="story-client-name">Saroni Kundu</div>
+            <div class="story-client-detail">Sellers — Port Coquitlam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal d2" data-category="developer">
+        <span class="story-type-tag">Buyers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">Ravi is absolutely wonderful to work with. It’s like having a friend on the “inside” that is working for you. He kept us apprised about available appointments and always let us know as soon as a new one came on the market. His professionalism, knowledge, honesty, integrity and hard work ethics are very much appreciated and respected. During negotiations we always felt like he had our best interest in mind. We have and will continue to recommend him to all of our family and friends.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">HK</div>
+          <div>
+            <div class="story-client-name">Harshit K</div>
+            <div class="story-client-detail">Buyers — Port Coquitlam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal" data-category="seller">
+        <span class="story-type-tag">Sellers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">We recently sold and brought our home through Ravi and we couldn't have found someone better than him in the entire lower mainland. Ravi cares for his clients and watches out for them. He provides proper and thorough guidance and helps you through the entire buying and selling process. Highly highly recommend him and will continue to recommend him to our family and friends. Wish there was more than 5 stars to give to his professionalism. If you work with Ravi, you are in good hands!.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">TG</div>
+          <div>
+            <div class="story-client-name">Tasneem Ghadyali</div>
+            <div class="story-client-detail">Buyers & Sellers — Langley</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal" data-category="commercial">
+        <span class="story-type-tag">Commercial</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">Ravi was amazing to work with! He made the process easy and stress-free, always answering my questions quickly and professionally. I highly recommend Ravi if you’re looking for someone who truly cares and knows the market.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">SM</div>
+          <div>
+            <div class="story-client-name">Sukhvir Multani</div>
+            <div class="story-client-detail">Retail Lease — Surrey</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal d1" data-category="buyer">
+        <span class="story-type-tag">First Time Buyers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">Ravi was an exceptional realtor who went above and beyond to help us find our perfect home. He was incredibly patient throughout the entire process, always willing to answer questions and provide support. Even after closing, Ravi stayed involved, ensuring everything went smoothly up until we moved in.
+
+His dedication and genuine care have turned what could have been a stressful experience into an enjoyable journey. Beyond being a fantastic realtor, Ravi has become a good friend, and we couldn’t recommend him more highly!.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">AT</div>
+          <div>
+            <div class="story-client-name">Anish Thomas</div>
+            <div class="story-client-detail">First Time Buyers — Coquitlam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal d1" data-category="seller">
+        <span class="story-type-tag">Sellers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">Ravi did an exceptional job selling my house in a challenging real estate market. He leveraged aggressive social media marketing to attract potential buyers and conducted multiple open houses to ensure maximum exposure. His deep understanding & experience of the local real estate market and sales process was invaluable, and he provided expert guidance at every step to keep things moving smoothly. He was always there to support us and we trusted his guidance. I highly recommend Ravi to anyone looking to buy or sell a home in Coquitlam area.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">PT</div>
+          <div>
+            <div class="story-client-name">Puneet T</div>
+            <div class="story-client-detail">Sellers — Coquitlam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal d1" data-category="buyer">
+        <span class="story-type-tag">Buyers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">As newcomers to Vancouver, Canada, my wife and I were navigating the complexities of buying our first home in a new country. We connected with Ravi through a social media platform, and from our first interaction, he provided us with invaluable guidance throughout the entire home-buying journey.
+
+Ravi is not just a knowledgeable realtor — he truly understands the Vancouver real estate market and was incredibly thoughtful in tailoring options to suit our needs and budget. Each week, he presented us with a list of homes, and he consistently showed up with a clear plan and valuable insights.
+
+What stood out the most was Ravi’s genuine approach. He was more like a friend than a realtor, helping us navigate the emotional and practical challenges of distinguishing between our wants and our actual needs. His patience and punctuality made a big difference.
+
+Thanks you so much Ravi for all your help and support. We successfully purchased our first home in Canada with confidence and clarity.
+
+We’re grateful for Ravi's guidance and would highly recommend him to anyone looking to buy a home—especially newcomers who need someone they can trust.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">PKT</div>
+          <div>
+            <div class="story-client-name">Praveen Kumar Thakur</div>
+            <div class="story-client-detail">First Time Buyers — Port Coquitlam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal" data-category="commercial">
+        <span class="story-type-tag">Commercial</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">Knowledgable, dedicate and very responsive.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">JW</div>
+          <div>
+            <div class="story-client-name">Jeffrey Wang</div>
+            <div class="story-client-detail">Industrial Lease — Surrey</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal" data-category="developer">
+        <span class="story-type-tag">Buyers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">Being in Alberta it is very hard to purchase real estate in Greater Vancouver. One of my friend recommended Ravi Arora. Ravi is very professional, knowledgeable, hard working realtor. He never hesitated or delayed to get us all the information (like clarification from city, civil engineer or lawyer). He was very prompt in getting all the required information. He presented all the properties with full detailed information that helped to make the decision. I am very pleased with Ravi's service and highly recommend him as a realtor. He still follows up with regarding our purchase. Jazz from Edmonton.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">GTP</div>
+          <div>
+            <div class="story-client-name">GreenTechPro Homes</div>
+            <div class="story-client-detail">Lot Subdivision — Port Coquitlam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card reveal d2" data-category="buyer">
+        <span class="story-type-tag">Buyers</span>
+        <div class="story-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="story-card-quote">We had an outstanding experience with Ravi Arora. From start to finish, he demonstrated exceptional professionalism and was incredibly patient with us throughout the entire process, taking the time to answer all our questions and guide us step-by-step. Being first time home buyers , we were not sure what to expect intially. He went above and beyond to ensure we found the perfect home and made the experience as smooth and stress-free as possible. I highly recommend Ravi Arora to anyone in need of a dedicated and skilled realtor!.</p>
+        <div class="story-client-info">
+          <div class="story-avatar">ML</div>
+          <div>
+            <div class="story-client-name">Madhu Luthra</div>
+            <div class="story-client-detail">Townhome Buyers - Burke Mountain, Coquitlam</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-inline reveal">
+      <h3>Ready to Write Your Story?</h3>
+      <p>Every one of these clients started with a single conversation. Book a free, no-obligation call and let's talk about what's possible for you.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free 20-Min Call</a>
+        <a href="contact.html" class="btn btn-primary">Send a Message</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Dark CTA -->
+<section style="background:var(--bg-dark);padding:2.5rem 0">
+  <div class="wrap" style="text-align:center">
+    <span class="section-label dark-label reveal">Work With Ravi</span>
+    <h2 class="reveal d1" style="color:var(--t-light);max-width:540px;margin:0.25rem auto 0.5rem;font-size:clamp(1.25rem,2vw,1.5rem)">Your Real Estate goals deserve a Specialist</h2>
+    <p class="reveal d2" style="color:var(--t-muted);font-size:var(--sm);font-weight:300;max-width:420px;margin:0 auto 1.25rem">10+ years of Real Estate Development. 14 development projects navigated. 20-year community presence in Greater Vancouver.</p>
+    <a href="contact.html" class="btn btn-primary reveal d3">Get in Touch →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+        <p class="footer-tagline">Real Estate. Real Advice. Real Results.</p>
+        <p>Serving buyers, sellers, and investors across Coquitlam, Port Coquitlam, the Tri-Cities, Metro Vancouver, and Fraser Valley.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/rezoningrealtor/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8" target="_blank" rel="noopener" aria-label="Realtor.ca">R•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="client-stories.html">Client Stories</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> --></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Neighbourhoods</h4>
+        <ul>
+          <li><a href="neighbourhoods/coquitlam.html">Coquitlam</a></li>
+          <li><a href="neighbourhoods/port-coquitlam.html">Port Coquitlam</a></li>
+          <li><a href="neighbourhoods/port-moody.html">Port Moody</a></li>
+          <!-- <li><a href="neighbourhoods/burnaby.html">Burnaby</a></li> -->
+          <!-- <li><a href="neighbourhoods/new-westminster.html">New Westminster</a></li> -->
+          <!-- <li><a href="neighbourhoods/maple-ridge.html">Maple Ridge</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">📞 <a href="tel:+16043620362">(604) 362-0362</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+          <div class="footer-contact-item">📍 Coquitlam, BC</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ravi Arora Personal Real Estate Corporation (PREC*) | All Rights Reserved<br>Coldwell Banker Universe Realty | Real Estate Board of Greater Vancouver</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !mobileNav.contains(e.target)) mobileNav.classList.remove('open'); });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Tab filter
+const tabs = document.querySelectorAll('.story-tab');
+const cards = document.querySelectorAll('[data-category]');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.tab;
+    cards.forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Client Stories — Ravi Arora PREC*",
+  "description": "Real testimonials and success stories from buyers, sellers, developers, and investors who worked with Ravi Arora in Coquitlam and the Tri-Cities.",
+  "url": "https://rezoningrealtor.com/client-stories",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://rezoningrealtor.com"},
+      {"@type":"ListItem","position":2,"name":"Client Stories","item":"https://rezoningrealtor.com/client-stories"}
+    ]
+  }
+}
+</script>
+</body>
+</html>

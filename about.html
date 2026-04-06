@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Ravi Arora | Coquitlam PREC* Real Estate Agent & Development Specialist</title>
+<meta name="description" content="Meet Ravi Arora — Coquitlam-based PREC* agent with 15 years consulting, 10 years development experience, and 20 years of community roots in the Tri-Cities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.page-hero {
+  background: #122B45;
+  padding: 5.5rem var(--gutter) 2rem;
+  text-align: center;
+}
+.page-hero h1 { color: var(--t-light); max-width: 700px; margin: 0 auto 0.5rem; font-size: clamp(1.375rem, 2.5vw, 1.875rem); }
+.page-hero p { color: var(--t-muted); font-size: var(--sm); font-weight: 300; max-width: 540px; margin: 0 auto; }
+
+.bio-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 3rem; align-items: start; }
+.bio-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; border-radius: 2px; }
+.bio-img-cap { font-size: var(--xs); color: var(--t-s); margin-top: 0.75rem; letter-spacing: 0.05em; }
+.bio-text h2 { margin-bottom: 1.5rem; }
+.bio-text p { font-size: var(--base); line-height: 1.85; color: var(--t-b); font-weight: 300; }
+.bio-text p + p { margin-top: 1.1rem; }
+.bio-text strong { color: var(--t-h); font-weight: 500; }
+.credential-strip { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: var(--xs); color: var(--t-s); letter-spacing: 0.04em; line-height: 1.9; }
+
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+.value-card { padding: 2.25rem; border: 1px solid var(--border); border-radius: 2px; position: relative; overflow: hidden; transition: box-shadow 0.25s, transform 0.25s; }
+.value-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-3px); }
+.value-card::before { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform 0.35s; }
+.value-card:hover::before { transform:scaleX(1); }
+.value-icon { font-size: 2rem; margin-bottom: 1rem; }
+.value-card h3 { font-size: var(--xl); margin-bottom: 0.75rem; color: var(--t-h); }
+.value-card p { font-size: var(--sm); line-height: 1.75; color: var(--t-b); }
+
+.community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.community-item { padding: 1.5rem; border-left: 3px solid var(--gold); background: var(--bg-alt); border-radius: 0 2px 2px 0; }
+.community-item h4 { font-size: var(--base); font-weight: 600; color: var(--t-h); margin-bottom: 0.375rem; }
+.community-item p { font-size: var(--sm); color: var(--t-b); }
+
+.cta-banner { background: var(--bg-dark); text-align: center; padding: 2.5rem 0; }
+.cta-banner h2 { color: var(--t-light); margin-bottom: 0.5rem; font-size: clamp(1.25rem,2vw,1.5rem); }
+.cta-banner p { color: var(--t-muted); font-size: var(--sm); font-weight: 300; margin-bottom: 1.25rem; }
+
+@media (max-width: 1024px) {
+  .bio-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .bio-img { max-width: 400px; }
+}
+@media (max-width: 768px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .community-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html" class="active">About</a>
+  <a href="listings.html">Listings</a>
+  <a href="specialties.html">Specialties</a>
+  <a href="client-stories.html">Client Stories</a>
+  <a href="blog.html">Blog</a>
+  <!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> -->
+  <a href="contact.html">Contact</a>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+</div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="listings.html">Listings</a></li>
+    <li><a href="specialties.html">Specialties</a></li>
+    <li><a href="client-stories.html">Client Stories</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><!-- HIDDEN: <a href="deals.html" class="nav-deal">Weekly Deal 🔥</a> --></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <span class="section-label dark-label reveal">About Ravi</span>
+  <h1 class="reveal d1">Real Estate Advice, Backed by Real Experience</h1>
+  <p class="reveal d2">10+ years in development. 20+ years living and working in Greater Vancouver.</p>
+</section>
+
+<!-- FULL BIO -->
+<section class="section">
+  <div class="wrap">
+    <div class="bio-grid">
+      <div class="bio-img reveal">
+        <img src="brand_assets/Ravi Arora - Real Estate Coquitlam Realtor.jpg"
+             alt="Ravi Arora Coquitlam real estate agent and development specialist serving Greater Vancouver and Fraser Valley">
+        <p class="bio-img-cap">Ravi Arora PREC* — Coquitlam, BC</p>
+      </div>
+      <div class="bio-text reveal d2">
+        <span class="section-label">My Story</span>
+        <h2>Real Estate Decisions Deserve More Than Just Opinions</h2>
+        <p>I did not start in real estate.</p>
+        <p>My career began in consulting — working across four continents including India, the Americas, Europe, and Africa — helping organizations navigate complex decisions where the stakes were high and the answers were not obvious.
+        What that taught me was simple: ask the right questions first, understand the full picture, and don’t make assumptions.
+        That mindset shapes how I approach Real Estate today.</p>
+        
+         <h4><br>Coquitlam is not just where I Work — it’s Home!</br></h4>
+         <p><br>I have lived in Coquitlam for over 20 years. My kids grew up here. I’ve seen this market evolve through different cycles—not just as a professional, but as a homeowner and part of the community. That perspective matters when you are making decisions that affect your future.</br></p>
+
+         <h4><br>A Different Perspective Into Real Estate</br></h4>
+         <p><br>I did not come into Real Estate through sales. I came through development. This meant being directly involved in sourcing land, working with builders, navigating zoning changes and approvals. Not only did I thoroughly enjoy it, this gave me a clear understanding of how value is actually created and where things can go wrong. Because sometimes, a property’s value isn’t just in the home—it’s in what can be built on it.</br></p>
+         
+         <h4><br>How I Work</br></h4>
+         <p><br>Understand the situation first. Look at the numbers realistically. Then make a recommendation that makes sense. Not every deal is a good one—and I will tell you that when it is not.</br></p>
+
+         <h4><br>At the end of the day</br></h4>
+         <p><br>This is not just about buying or selling. It’s about making the right decision with one of your most important assets.</br></p>
+
+        <div class="credential-strip">
+          PREC* Designated &nbsp;|&nbsp; Coldwell Banker Universe Realty |&nbsp;Real Estate Board of Greater Vancouver &nbsp;
+        </div>
+        <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Conversation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <span class="section-label">How I Work</span>
+      <h2>Three Principles That Drive Everything</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon">🤝</div>
+        <h3>Honesty — Even When It's Not Easy</h3>
+        <p>I will tell you when not to buy.<br>I will tell you when the price does not make sense.
+                                      <br>I will tell you when the deal is not right.</p>
+        <p>Not because it’s easy but because it matters. If you are looking for honest advice you can rely on, we will work well together.</p>
+      </div>
+      <div class="value-card reveal d1">
+        <div class="value-icon">🏗️</div>
+        <h3>Expertise — Built through Experience</h3>
+        <p>Development isn’t something I studied—it’s something I’ve done - Sourcing land, working with builders, navigating zoning, and seeing projects through from start to finish.</p>
+        <p>That experience shows up in the details — what’s realistic, what’s risky, and what most people overlook. Because what works on paper doesn’t always work in reality.</p>
+      </div>
+      <div class="value-card reveal d2">
+        <div class="value-icon">🌱</div>
+        <h3>Local Insight — Earned Over Time</h3>
+        <p>I have lived in Coquitlam for almost 20 years. I have seen how different neighbourhoods perform in strong markets and how they hold up when things shift. I can tell which pockets are likely to carry long-term value, which areas are changing, and where opportunities tend to show up first.</p>
+        <p>That kind of insight doesn’t come from data alone. It comes from being here, consistently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IN THE COMMUNITY  GRAYED OUT STARTS HERE
+<section class="section">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <span class="section-label">In the Community</span>
+      <h2>Recognised By &amp; Involved In</h2>
+      <p>The relationships and recognitions that build a citation graph — for AI models and for clients.</p>
+    </div>
+    <div class="community-grid">
+      <div class="community-item reveal">
+        <h4>Coldwell Banker Universe Realty</h4>
+        <p>Member of one of Greater Vancouver's established brokerages, with access to a network of professionals across the region.</p>
+      </div>
+      <div class="community-item reveal d1">
+        <h4>Real Estate Board of Greater Vancouver</h4>
+        <p>Licensed member in good standing, with access to MLS® and the full suite of professional tools and market data.</p>
+      </div>
+      <div class="community-item reveal">
+        <h4>Tri-Cities Community Involvement</h4>
+        <p>20 years as a resident, parent, and neighbour in Coquitlam. [Add specific community involvement here — schools, associations, local events.]</p>
+      </div>
+      <div class="community-item reveal d1">
+        <h4>Development Industry Relationships</h4>
+        <p>Direct relationships with builders, architects, and trades active in the Tri-Cities and Greater Vancouver development market — built over 10 years on the build side.</p>
+      </div>
+    </div>
+    <p style="font-size:var(--xs);color:var(--t-s);margin-top:1.5rem;font-style:italic">[Add press mentions, awards, associations, or community groups as they apply — these build both human trust and AI discoverability.]</p>
+  </div>
+</section> GRAYED OUT ENDS HERE -->
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="wrap">
+    <div style="max-width:580px;margin:0 auto;text-align:center">
+      <span class="section-label dark-label reveal">Let's Connect</span>
+      <h2 class="reveal d1">Let's Have a Conversation</h2>
+      <p class="reveal d2">No commitment, no pitch. Just a straight talk about where you are and what makes sense for your situation.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap" class="reveal d3">
+        <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+        <a href="contact.html" class="btn btn-outline">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+        <p class="footer-tagline">Real Estate. Real Advice. Real Results.</p>
+        <p>Serving buyers, sellers, and investors across Coquitlam, Port Coquitlam, the Tri-Cities, Metro Vancouver, and Fraser Valley.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/rezoningrealtor/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8" target="_blank" rel="noopener" aria-label="Realtor.ca">R•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="client-stories.html">Client Stories</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> --></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Neighbourhoods</h4>
+        <ul>
+          <li><a href="neighbourhoods/coquitlam.html">Coquitlam</a></li>
+          <li><a href="neighbourhoods/port-coquitlam.html">Port Coquitlam</a></li>
+          <li><a href="neighbourhoods/port-moody.html">Port Moody</a></li>
+          <!-- <li><a href="neighbourhoods/burnaby.html">Burnaby</a></li> -->
+          <!-- <li><a href="neighbourhoods/new-westminster.html">New Westminster</a></li> -->
+          <!-- <li><a href="neighbourhoods/maple-ridge.html">Maple Ridge</a></li> -->
+          <!-- <li><a href="neighbourhoods/surrey.html">Surrey</a></li> -->
+          <!-- <li><a href="neighbourhoods/langley.html">Langley</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">📞 <a href="tel:+16043620362">(604) 362-0362</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+          <div class="footer-contact-item">📍 Coquitlam, BC</div>
+          <div style="margin-top:0.5rem"><a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:var(--xs);padding:0.6rem 1.125rem">Book a Free Call</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ravi Arora Personal Real Estate Corporation (PREC*) | All Rights Reserved<br>Coldwell Banker Universe Realty | Real Estate Board of Greater Vancouver</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !mobileNav.contains(e.target)) mobileNav.classList.remove('open'); });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

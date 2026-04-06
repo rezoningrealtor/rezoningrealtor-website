@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Ravi Arora | Book a Free Real Estate Consultation — Coquitlam</title>
+<meta name="description" content="Book a free, no-obligation consultation with Ravi Arora PREC* — Coquitlam's development and real estate specialist. Reach out by phone, email, or book online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.page-hero { background: #122B45; padding: 5.5rem var(--gutter) 2rem; text-align: center; }
+.page-hero h1 { color: var(--t-light); max-width: 620px; margin: 0 auto 0.5rem; font-size: clamp(1.375rem, 2.5vw, 1.875rem); }
+.page-hero p { color: var(--t-muted); font-size: var(--sm); font-weight: 300; max-width: 500px; margin: 0 auto; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+.contact-sidebar h3 { font-size: var(--2xl); margin-bottom: 1.25rem; color: var(--t-h); }
+.contact-sidebar p { font-size: var(--sm); line-height: 1.75; color: var(--t-b); margin-bottom: 2rem; font-weight: 300; }
+.contact-methods { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem; }
+.contact-method { display: flex; align-items: flex-start; gap: 1rem; }
+.contact-method-icon { width: 2.5rem; height: 2.5rem; background: var(--gold-dim); border: 1px solid var(--gold-border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.contact-method-label { font-size: var(--xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t-s); margin-bottom: 0.2rem; }
+.contact-method-value { font-size: var(--base); color: var(--t-h); font-weight: 500; }
+.contact-method-value a { color: var(--t-h); transition: color 0.2s; }
+.contact-method-value a:hover { color: var(--gold); }
+.calendly-box { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 2px; padding: 1.75rem; text-align: center; }
+.calendly-box p { font-size: var(--sm); color: var(--t-b); margin-bottom: 1rem; font-weight: 300; line-height: 1.6; }
+
+.contact-form-wrap { background: var(--bg); border: 1px solid var(--border); border-radius: 2px; padding: 2.5rem; }
+.contact-form-wrap h3 { font-size: var(--2xl); margin-bottom: 0.5rem; color: var(--t-h); }
+.contact-form-wrap > p { font-size: var(--sm); color: var(--t-s); margin-bottom: 2rem; font-weight: 300; }
+.form-grid { display: flex; flex-direction: column; gap: 1.125rem; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.125rem; }
+.form-success { display: none; text-align: center; padding: 3rem 2rem; }
+.form-success h3 { color: var(--t-h); margin-bottom: 0.75rem; }
+.form-success p { color: var(--t-b); font-size: var(--sm); }
+.availability { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: var(--xs); color: var(--t-s); line-height: 1.7; }
+
+@media (max-width: 1024px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
+@media (max-width: 768px) { .form-row-2 { grid-template-columns: 1fr; } .contact-form-wrap { padding: 1.75rem; } }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="listings.html">Listings</a>
+  <a href="specialties.html">Specialties</a>
+  <a href="client-stories.html">Client Stories</a>
+  <a href="blog.html">Blog</a>
+  <!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> -->
+  <a href="contact.html" class="active">Contact</a>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+</div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="index.html" class="nav-logo"><img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC"></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="listings.html">Listings</a></li>
+    <li><a href="specialties.html">Specialties</a></li>
+    <li><a href="client-stories.html">Client Stories</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><!-- HIDDEN: <a href="deals.html" class="nav-deal">Weekly Deal 🔥</a> --></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <span class="section-label dark-label reveal">Get In Touch</span>
+  <h1 class="reveal d1">Let's Talk</h1>
+  <p class="reveal d2">Whether you have a property in mind or just want to think through your options, I can help.</p>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- SIDEBAR -->
+      <div class="reveal">
+        <h3>Reach Out Directly</h3>
+        <p></p>
+        <p></p>
+              <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">📞</div>
+            <div>
+              <div class="contact-method-label"></div>
+              <div class="contact-method-value"><a href="tel:+16043620362">(604) 362-0362</a></div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">✉</div>
+            <div>
+              <div class="contact-method-label"></div>
+              <div class="contact-method-value"><a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">📍</div>
+            <div>
+              <div class="contact-method-label">Location</div>
+              <div class="contact-method-value">Coquitlam, BC</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">IG</div>
+            <div>
+              <div class="contact-method-label">Instagram</div>
+              <div class="contact-method-value"><a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener">@rezoningrealtor</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calendly-box">
+          <p>Book a call at a time that works for you.</p>
+          <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center">📅 Book Online</a>
+        </div>
+
+        <div class="availability">
+          <strong style="color:var(--t-h)">Availability:</strong><br>
+          Monday – Friday: 9am – 7pm<br>
+          Saturday: 9am – 6pm<br>
+          Sunday:  9am – 6pm<br><br>
+          <em></em>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-form-wrap reveal d2">
+        <h3>Send a Message</h3>
+        <p>Tell me a bit about your situation and I'll follow up with a thoughtful response.</p>
+
+        <form class="form-grid" id="contactForm" onsubmit="handleForm(event)">
+          <input type="text" name="hp" class="honeypot" tabindex="-1" autocomplete="off" style="display:none">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" name="firstName" placeholder="Bob Smith" required>
+            </div>
+           </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="bob@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone <span style="font-weight:400;opacity:.6">(optional)</span></label>
+            <input type="tel" name="phone" placeholder="(604) 000-0000">
+          </div>
+          <div class="form-group">
+            <label>I am a…</label>
+            <select name="clientType">
+              <option value="">Select your situation</option>
+              <option value="First-Time Buyer">First-Time Buyer</option>
+              <option value="Developer / Multiplex">Developer / Multiplex</option>
+              <option value="Investor">Investor</option>
+              <option value="Seller">Seller</option>
+              <option value="Move-Up Buyer">Move-Up Buyer</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message <span style="font-weight:400;opacity:.6">(optional)</span></label>
+            <textarea name="message" rows="5" placeholder="What's on your mind? Where are you in the process? What are you trying to accomplish? No detail is too small."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:var(--base);padding:1rem">Send Message →</button>
+          <p style="font-size:var(--xs);color:var(--t-s);text-align:center">I typically respond within a few hours.</p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:2.5rem;margin-bottom:1rem">✓</div>
+          <h3>Message received</h3>
+          <p>I'll follow up personally within a few hours. Looking forward to the conversation, Ravi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+        <p class="footer-tagline">Real Estate. Real Advice. Real Results.</p>
+        <p>Serving buyers, sellers, and investors across Coquitlam, Port Coquitlam, the Tri-Cities, Metro Vancouver, and Fraser Valley.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/rezoningrealtor/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8" target="_blank" rel="noopener" aria-label="Realtor.ca">R•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="client-stories.html">Client Stories</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> --></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Neighbourhoods</h4>
+        <ul>
+          <li><a href="neighbourhoods/coquitlam.html">Coquitlam</a></li>
+          <li><a href="neighbourhoods/port-coquitlam.html">Port Coquitlam</a></li>
+          <li><a href="neighbourhoods/port-moody.html">Port Moody</a></li>
+          <!-- <li><a href="neighbourhoods/burnaby.html">Burnaby</a></li> -->
+          <!-- <li><a href="neighbourhoods/new-westminster.html">New Westminster</a></li> -->
+          <!-- <li><a href="neighbourhoods/maple-ridge.html">Maple Ridge</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">📞 <a href="tel:+16043620362">(604) 362-0362</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+          <div class="footer-contact-item">📍 Coquitlam, BC</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ravi Arora Personal Real Estate Corporation (PREC*) | All Rights Reserved<br>Coldwell Banker Universe Realty | Real Estate Board of Greater Vancouver</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SHEET_ENDPOINT = '';
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !mobileNav.contains(e.target)) mobileNav.classList.remove('open'); });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+async function handleForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+  if (form.hp && form.hp.value) return;
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  if (SHEET_ENDPOINT) {
+    try {
+      await fetch(SHEET_ENDPOINT, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({
+        formType: 'Contact Page',
+        fullName: form.firstName.value.trim(),
+        email: form.email.value,
+        phone: form.phone.value,
+        clientType: form.clientType.value,
+        message: form.message.value,
+        sourcePage: 'Contact'
+      })});
+    } catch(err) { console.log('Submission error', err); }
+  }
+  form.style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>

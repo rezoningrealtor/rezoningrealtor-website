@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Deal 🔥 | Ravi Arora PREC* — Coquitlam Real Estate Finds</title>
+<meta name="description" content="Every week, Ravi Arora handpicks one under-the-radar property in the Tri-Cities — a value buy, a development opportunity, or a deal that deserves attention. Free, no sign-up needed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.page-hero { background: #122B45; padding: 9rem var(--gutter) 5rem; text-align: center; }
+.page-hero h1 { color: var(--t-light); max-width: 680px; margin: 0 auto 1rem; }
+.page-hero p { color: var(--t-muted); font-size: var(--lg); font-weight: 300; max-width: 520px; margin: 0 auto; }
+.deal-live-badge { display: inline-block; background: var(--gold); color: #1A1916; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px; margin-bottom: 1.25rem; }
+
+/* Current Deal Hero */
+.deal-hero-card { background: var(--bg); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; margin-bottom: 5rem; }
+.deal-hero-inner { display: grid; grid-template-columns: 1fr 1fr; }
+.deal-hero-img { position: relative; min-height: 480px; background: var(--bg-alt); overflow: hidden; }
+.deal-hero-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.deal-hero-img-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(28,20,0,0.4) 0%, transparent 60%); }
+.deal-week-label { position: absolute; top: 1.25rem; left: 1.25rem; background: var(--gold); color: #1A1916; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.8rem; border-radius: 2px; }
+.deal-hero-body { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+.deal-type-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-h); margin-bottom: 0.75rem; }
+.deal-hero-body h2 { font-size: var(--3xl); color: var(--t-h); margin-bottom: 0.5rem; line-height: 1.2; }
+.deal-price { font-family: var(--display); font-size: var(--4xl); color: var(--t-h); font-weight: 700; margin-bottom: 0.25rem; }
+.deal-price-context { font-size: var(--xs); color: var(--t-s); font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; }
+.deal-why { background: var(--bg-alt); border-left: 3px solid var(--gold); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 2px 2px 0; }
+.deal-why-label { font-size: var(--xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t-s); margin-bottom: 0.5rem; }
+.deal-why p { font-size: var(--sm); color: var(--t-b); line-height: 1.7; font-weight: 300; margin: 0; }
+.deal-specs { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.deal-spec { text-align: center; }
+.deal-spec-val { font-family: var(--display); font-size: var(--xl); color: var(--t-h); font-weight: 600; }
+.deal-spec-label { font-size: var(--xs); color: var(--t-s); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.15rem; }
+.deal-hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* Past deals */
+.past-deals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+.past-deal-card { background: var(--bg); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; opacity: 0.85; transition: opacity 0.2s, box-shadow 0.2s; }
+.past-deal-card:hover { opacity: 1; box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+.past-deal-img { aspect-ratio: 16/9; background: var(--bg-alt); overflow: hidden; }
+.past-deal-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; filter: grayscale(30%); }
+.past-deal-card:hover .past-deal-img img { transform: scale(1.03); filter: grayscale(0); }
+.past-deal-body { padding: 1.25rem; }
+.past-deal-week { font-size: var(--xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t-s); margin-bottom: 0.4rem; }
+.past-deal-title { font-family: var(--display); font-size: var(--base); color: var(--t-h); line-height: 1.35; margin-bottom: 0.4rem; font-weight: 600; }
+.past-deal-price { font-size: var(--sm); font-weight: 600; color: var(--gold-h); }
+.past-deal-status { font-size: var(--xs); color: var(--t-s); margin-top: 0.25rem; }
+
+/* Signup strip */
+.deal-signup-strip { background: var(--bg-dark); border-radius: 2px; padding: 3.5rem; text-align: center; margin: 4rem 0; }
+.deal-signup-strip h3 { font-family: var(--display); font-size: var(--3xl); color: var(--t-light); margin-bottom: 0.75rem; }
+.deal-signup-strip p { color: var(--t-muted); font-size: var(--base); font-weight: 300; max-width: 480px; margin: 0 auto 2rem; line-height: 1.7; }
+.deal-signup-form { display: flex; gap: 0.75rem; max-width: 480px; margin: 0 auto; flex-wrap: wrap; }
+.deal-signup-form input { flex: 1; min-width: 200px; font-family: var(--body); font-size: var(--sm); padding: 0.8rem 1.1rem; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: var(--t-light); border-radius: 2px; }
+.deal-signup-form input::placeholder { color: rgba(242,237,227,0.35); }
+.deal-signup-form input:focus { outline: none; border-color: var(--gold); }
+.deal-signup-success { color: var(--gold); font-size: var(--sm); font-weight: 500; margin-top: 1rem; display: none; }
+
+@media (max-width: 1024px) { .deal-hero-inner { grid-template-columns: 1fr; } .deal-hero-img { min-height: 300px; } .past-deals-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .past-deals-grid { grid-template-columns: 1fr; } .deal-signup-form { flex-direction: column; } .deal-hero-body { padding: 2rem; } }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="listings.html">Listings</a>
+  <a href="specialties.html">Specialties</a>
+  <a href="client-stories.html">Client Stories</a>
+  <a href="blog.html">Blog</a>
+  <!-- HIDDEN: <a href="deals.html" class="active">Weekly Deal 🔥</a> -->
+  <a href="contact.html">Contact</a>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+</div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="index.html" class="nav-logo"><img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC"></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="listings.html">Listings</a></li>
+    <li><a href="specialties.html">Specialties</a></li>
+    <li><a href="client-stories.html">Client Stories</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><!-- HIDDEN: <a href="deals.html" class="nav-deal active">Weekly Deal 🔥</a> --></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <span class="deal-live-badge reveal">🔥 Live This Week</span>
+  <h1 class="reveal d1">The Weekly Deal</h1>
+  <p class="reveal d2">Every week I hand-pick one property that deserves more attention — a value buy, a development play, or a deal that the market hasn't fully priced yet.</p>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- Current Featured Deal -->
+    <div class="deal-hero-card reveal">
+      <div class="deal-hero-inner">
+        <div class="deal-hero-img">
+          <img src="https://placehold.co/800x600/e8e0cc/787868?text=This+Week%27s+Deal" alt="This week's deal">
+          <div class="deal-hero-img-overlay"></div>
+          <span class="deal-week-label">Week of March 24, 2026</span>
+        </div>
+        <div class="deal-hero-body">
+          <div class="deal-type-tag">Development Opportunity</div>
+          <h2>Corner Lot — Development Potential</h2>
+          <div class="deal-price">$1,295,000</div>
+          <div class="deal-price-context">Asking Price · Coquitlam, BC</div>
+          <div class="deal-specs">
+            <div class="deal-spec"><div class="deal-spec-val">7,800</div><div class="deal-spec-label">sq ft lot</div></div>
+            <div class="deal-spec"><div class="deal-spec-val">RT-2</div><div class="deal-spec-label">Zoning</div></div>
+            <div class="deal-spec"><div class="deal-spec-val">6 units</div><div class="deal-spec-label">Buildable</div></div>
+          </div>
+          <div class="deal-why">
+            <div class="deal-why-label">Why This Deal</div>
+            <p>Corner lot with 7,800 sq ft under the new Small-Scale Multi-Unit rules — that's 6 units of right-to-build density without a rezoning application. Current house generates rental income while you wait for permits. Comparable finished projects in this pocket are selling at $650–$720/sq ft.</p>
+          </div>
+          <div class="deal-hero-cta">
+            <a href="contact.html" class="btn btn-primary">Ask About This Deal →</a>
+            <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-outline">Book a Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Strip -->
+    <div class="deal-signup-strip reveal">
+      <h3>Get the Deal First</h3>
+      <p>I send the weekly deal by email every Monday morning — before it goes on the website. No spam, just one property, once a week.</p>
+      <form class="deal-signup-form" onsubmit="handleDealSignup(event)">
+        <input type="text" name="hp" tabindex="-1" autocomplete="off" style="display:none">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn-primary">Get Weekly Deals →</button>
+      </form>
+      <div class="deal-signup-success" id="dealSignupSuccess">✓ You're in! Watch for your first deal Monday.</div>
+    </div>
+
+    <!-- Past Deals -->
+    <h2 class="reveal" style="font-size:var(--2xl);margin-bottom:0.5rem;color:var(--t-h)">Past Deals</h2>
+    <p class="reveal" style="font-size:var(--sm);color:var(--t-s);margin-bottom:2rem;font-weight:300">Previous weekly picks — some still available, most already gone.</p>
+
+    <div class="past-deals-grid">
+
+      <div class="past-deal-card reveal">
+        <div class="past-deal-img">
+          <img src="https://placehold.co/560x315/ddd5c0/9a9080?text=Week+12" alt="Past deal">
+        </div>
+        <div class="past-deal-body">
+          <div class="past-deal-week">Week of March 17, 2026</div>
+          <div class="past-deal-title">3-Bed House — Buyer Motivated</div>
+          <div class="past-deal-price">$1,189,000</div>
+          <div class="past-deal-status">Port Coquitlam · Sold</div>
+        </div>
+      </div>
+
+      <div class="past-deal-card reveal d1">
+        <div class="past-deal-img">
+          <img src="https://placehold.co/560x315/d5cfc0/9a9080?text=Week+11" alt="Past deal">
+        </div>
+        <div class="past-deal-body">
+          <div class="past-deal-week">Week of March 10, 2026</div>
+          <div class="past-deal-title">Legal Suite + Coach House Lot</div>
+          <div class="past-deal-price">$1,595,000</div>
+          <div class="past-deal-status">Coquitlam · Under Contract</div>
+        </div>
+      </div>
+
+      <div class="past-deal-card reveal d2">
+        <div class="past-deal-img">
+          <img src="https://placehold.co/560x315/ccc5b0/9a9080?text=Week+10" alt="Past deal">
+        </div>
+        <div class="past-deal-body">
+          <div class="past-deal-week">Week of March 3, 2026</div>
+          <div class="past-deal-title">Investor Condo — Tenant in Place</div>
+          <div class="past-deal-price">$629,000</div>
+          <div class="past-deal-status">Burnaby · Sold</div>
+        </div>
+      </div>
+
+      <div class="past-deal-card reveal">
+        <div class="past-deal-img">
+          <img src="https://placehold.co/560x315/d8d0bc/9a9080?text=Week+9" alt="Past deal">
+        </div>
+        <div class="past-deal-body">
+          <div class="past-deal-week">Week of Feb 24, 2026</div>
+          <div class="past-deal-title">Rezoning Candidate — 6 Units</div>
+          <div class="past-deal-price">$1,825,000</div>
+          <div class="past-deal-status">Port Moody · Sold</div>
+        </div>
+      </div>
+
+      <div class="past-deal-card reveal d1">
+        <div class="past-deal-img">
+          <img src="https://placehold.co/560x315/e0dbc8/9a9080?text=Week+8" alt="Past deal">
+        </div>
+        <div class="past-deal-body">
+          <div class="past-deal-week">Week of Feb 17, 2026</div>
+          <div class="past-deal-title">Starter Home — Below Assessment</div>
+          <div class="past-deal-price">$898,000</div>
+          <div class="past-deal-status">Port Coquitlam · Sold</div>
+        </div>
+      </div>
+
+      <div class="past-deal-card reveal d2">
+        <div class="past-deal-img">
+          <img src="https://placehold.co/560x315/e8e0cc/9a9080?text=Week+7" alt="Past deal">
+        </div>
+        <div class="past-deal-body">
+          <div class="past-deal-week">Week of Feb 10, 2026</div>
+          <div class="past-deal-title">4-Plex Land Assembly</div>
+          <div class="past-deal-price">$2,400,000</div>
+          <div class="past-deal-status">Coquitlam · Sold</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ / How It Works -->
+<section class="section" style="background:var(--bg-alt);padding-top:4rem;padding-bottom:4rem">
+  <div class="wrap">
+    <div style="max-width:680px;margin:0 auto">
+      <span class="section-label reveal">How It Works</span>
+      <h2 class="reveal d1" style="font-size:var(--2xl);color:var(--t-h);margin-bottom:0.75rem">About the Weekly Deal</h2>
+      <p class="reveal d2" style="font-size:var(--base);color:var(--t-b);font-weight:300;line-height:1.75;margin-bottom:2.5rem">Every Monday I post one property that caught my eye — not because someone paid to feature it, but because I genuinely think it represents value. Here's how it works:</p>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem">
+        <div class="reveal" style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:2.5rem;height:2.5rem;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--t-h);flex-shrink:0">1</div>
+          <div>
+            <div style="font-weight:600;color:var(--t-h);margin-bottom:0.35rem">I find the property</div>
+            <div style="font-size:var(--sm);color:var(--t-b);font-weight:300;line-height:1.7">I scan MLS, my network, and off-market sources every week for properties that are undervalued, overlooked, or represent a specific opportunity — development potential, below-market pricing, etc.</div>
+          </div>
+        </div>
+        <div class="reveal d1" style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:2.5rem;height:2.5rem;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--t-h);flex-shrink:0">2</div>
+          <div>
+            <div style="font-weight:600;color:var(--t-h);margin-bottom:0.35rem">I explain why it's interesting</div>
+            <div style="font-size:var(--sm);color:var(--t-b);font-weight:300;line-height:1.7">Not just the listing details — I walk through the specific angle: what the developer sees, what the buyer gets, what the number actually means in today's market.</div>
+          </div>
+        </div>
+        <div class="reveal d2" style="display:flex;gap:1.25rem;align-items:flex-start">
+          <div style="width:2.5rem;height:2.5rem;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--t-h);flex-shrink:0">3</div>
+          <div>
+            <div style="font-weight:600;color:var(--t-h);margin-bottom:0.35rem">You reach out if it fits</div>
+            <div style="font-size:var(--sm);color:var(--t-b);font-weight:300;line-height:1.7">No pressure, no obligation. If the deal looks interesting, contact me and I'll give you the full picture — including anything that could be a downside. Honest analysis, always.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+        <p class="footer-tagline">Real Estate. Real Advice. Real Results.</p>
+        <p>Serving buyers, sellers, and investors across Coquitlam, Port Coquitlam, the Tri-Cities, Metro Vancouver, and Fraser Valley.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/rezoningrealtor/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8" target="_blank" rel="noopener" aria-label="Realtor.ca">R•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="client-stories.html">Client Stories</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> --></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Neighbourhoods</h4>
+        <ul>
+          <li><a href="neighbourhoods/coquitlam.html">Coquitlam</a></li>
+          <li><a href="neighbourhoods/port-coquitlam.html">Port Coquitlam</a></li>
+          <li><a href="neighbourhoods/port-moody.html">Port Moody</a></li>
+          <!-- <li><a href="neighbourhoods/burnaby.html">Burnaby</a></li> -->
+          <!-- <li><a href="neighbourhoods/new-westminster.html">New Westminster</a></li> -->
+          <!-- <li><a href="neighbourhoods/maple-ridge.html">Maple Ridge</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">📞 <a href="tel:+16043620362">(604) 362-0362</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+          <div class="footer-contact-item">📍 Coquitlam, BC</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ravi Arora Personal Real Estate Corporation (PREC*) | All Rights Reserved<br>Coldwell Banker Universe Realty | Real Estate Board of Greater Vancouver</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SHEET_ENDPOINT = '';
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !mobileNav.contains(e.target)) mobileNav.classList.remove('open'); });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+async function handleDealSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button');
+  if (form.hp && form.hp.value) return;
+  btn.textContent = 'Signing up…'; btn.disabled = true;
+  if (SHEET_ENDPOINT) {
+    try {
+      await fetch(SHEET_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+        formType: 'Weekly Deal Signup', email: form.email.value, sourcePage: 'Deals'
+      })});
+    } catch(err) { console.log(err); }
+  }
+  document.getElementById('dealSignupSuccess').style.display = 'block';
+  form.style.display = 'none';
+}
+</script>
+</body>
+</html>

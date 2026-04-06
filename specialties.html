@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate Specialties | Move-Up Buyers, Multiplex, Investment & New Construction — Coquitlam</title>
+<meta name="description" content="Ravi Arora specialises in move-up buyers, first-time buyers, multiplex development, and investment properties across Greater Vancouver and Fraser Valley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.page-hero { background: var(--bg-dark); padding: 5.5rem var(--gutter) 2rem; text-align: center; }
+.page-hero h1 { color: var(--t-light); max-width: 720px; margin: 0 auto 0.5rem; font-size: clamp(1.375rem, 2.5vw, 1.875rem); }
+.page-hero p { color: var(--t-muted); font-size: var(--sm); font-weight: 300; max-width: 540px; margin: 0 auto; }
+
+.spec-nav { background: var(--bg-alt); border-bottom: 1px solid var(--border); position: sticky; top: 72px; z-index: 100; }
+.spec-nav-inner { display: flex; gap: 0; overflow-x: auto; }
+.spec-nav-link { font-size: var(--sm); font-weight: 500; color: var(--t-s); padding: 1.125rem 1.75rem; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; cursor: pointer; }
+.spec-nav-link:hover, .spec-nav-link.active { color: var(--gold); border-color: var(--gold); }
+
+.spec-section { scroll-margin-top: 130px; }
+.spec-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; align-items: start; }
+.spec-grid.reverse { grid-template-columns: 2fr 3fr; }
+.spec-grid.reverse .spec-content { order: 1; }
+.spec-grid.reverse .spec-visual { order: 2; }
+.spec-content h2 { margin-bottom: 1.25rem; }
+.spec-content p { font-size: var(--base); line-height: 1.82; color: var(--t-b); font-weight: 300; }
+.spec-content p + p { margin-top: 1rem; }
+.spec-points { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+.spec-point { display: flex; align-items: flex-start; gap: 0.875rem; font-size: var(--sm); color: var(--t-b); line-height: 1.6; }
+.spec-point::before { content: '✦'; color: var(--gold); font-size: 0.6rem; margin-top: 0.375rem; flex-shrink: 0; }
+.spec-visual { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 2px; padding: 2.5rem; }
+.spec-visual h3 { font-size: var(--xl); margin-bottom: 1.25rem; color: var(--t-h); }
+.spec-visual ul { display: flex; flex-direction: column; gap: 0.75rem; }
+.spec-visual ul li { font-size: var(--sm); color: var(--t-b); padding-left: 1rem; position: relative; line-height: 1.6; }
+.spec-visual ul li::before { content: '→'; position: absolute; left: 0; color: var(--gold); }
+.spec-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* SPEC LEAD MAGNET */
+.spec-lead {
+  background: var(--bg-dark);
+  border-radius: 2px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+}
+.spec-lead-label {
+  font-size: var(--xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.625rem;
+  display: block;
+}
+.spec-lead h4 {
+  font-family: var(--display);
+  font-size: var(--lg);
+  color: var(--t-light);
+  margin-bottom: 0.625rem;
+  line-height: 1.3;
+}
+.spec-lead p {
+  font-size: var(--xs);
+  color: var(--t-muted);
+  line-height: 1.65;
+  margin-bottom: 1.125rem;
+}
+.spec-lead-form { display: flex; flex-direction: column; gap: 0.625rem; }
+.spec-lead-input {
+  font-family: var(--body);
+  font-size: var(--sm);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px;
+  padding: 0.7rem 0.875rem;
+  color: var(--t-light);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.spec-lead-input::placeholder { color: rgba(242,237,227,0.35); }
+.spec-lead-input:focus { border-color: var(--gold); }
+.spec-lead-btn {
+  background: var(--gold);
+  color: var(--t-h);
+  border-radius: 2px;
+  font-family: var(--body);
+  font-size: var(--xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.75rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.spec-lead-btn:hover { background: var(--gold-h); transform: translateY(-1px); }
+.spec-lead-success {
+  display: none;
+  text-align: center;
+  padding: 1.25rem;
+  border: 1px solid rgba(245,194,0,0.3);
+  border-radius: 2px;
+  background: rgba(245,194,0,0.06);
+  margin-top: 0.75rem;
+}
+.spec-lead-success p { font-size: var(--xs); color: var(--t-muted); margin: 0.25rem 0 0; }
+.spec-lead-success strong { color: var(--t-light); font-size: var(--sm); }
+
+@media (max-width: 1024px) {
+  .spec-grid, .spec-grid.reverse { grid-template-columns: 1fr; gap: 2.5rem; }
+  .spec-grid.reverse .spec-content, .spec-grid.reverse .spec-visual { order: unset; }
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="listings.html">Listings</a>
+  <a href="specialties.html" class="active">Specialties</a>
+  <a href="client-stories.html">Client Stories</a>
+  <a href="blog.html">Blog</a>
+  <!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> -->
+  <a href="contact.html">Contact</a>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+</div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="index.html" class="nav-logo"><img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC"></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="listings.html">Listings</a></li>
+    <li><a href="specialties.html" class="active">Specialties</a></li>
+    <li><a href="client-stories.html">Client Stories</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><!-- HIDDEN: <a href="deals.html" class="nav-deal">Weekly Deal 🔥</a> --></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <span class="section-label dark-label reveal">What I Specialize In</span>
+  <h1 class="reveal d1">4 Types of Clients. <br>1 Level of Commitment.</h1>
+  <p class="reveal d2">Every client I work with gets the same service: honest analysis, a clear strategy, and someone who puts their outcome ahead of the commission.</p>
+</section>
+
+<!-- STICKY SECTION NAV -->
+<div class="spec-nav">
+  <div class="wrap">
+    <div class="spec-nav-inner">
+      <a class="spec-nav-link active" href="#development">Developers &amp; Multiplex</a>
+      <a class="spec-nav-link" href="#firsttimebuyers">First-Time Buyers</a>
+      <a class="spec-nav-link" href="#moveup">Move-Up Buyers</a>
+      <a class="spec-nav-link" href="#investorscommercial">Investors &amp; Commercial</a>
+    </div>
+  </div>
+</div>
+
+<hr class="spec-divider">
+
+<!-- DEVELOPMENT -->
+<section class="section spec-section" id="development">
+  <div class="wrap">
+    <div class="spec-grid">
+      <div class="spec-content reveal">
+        <span class="section-label">Developers &amp; Multiplex</span>
+        <h2>Development-Focused Real Estate, Done Right</h2>
+        <p>Development is not just buying and selling—it’s knowing what is truly possible.</p>
+        <p>Finding the right lot is only the beginning. The real value comes from understanding what you can actually build, what it will cost, and whether the numbers make sense in today’s market.</p>
+        <p>That’s where experience matters!</p>
+        <p>With hands-on involvement in lot subdivisions, duplexes, and multiplex projects, I approach every property with a builder’s mindset—not just a sales perspective.</p>
+        <p>Right now, the opportunity across Greater Vancouver is changing fast. With new provincial policy like Bill 44, many properties that were once limited to single-family homes may now allow for duplexes, triplexes, fourplexes, or more.</p>
+        <p>For existing homeowners, this can often mean that your property could be worth more than you think and so how you approach selling it matters more than ever.</p>
+        <div class="spec-points">
+          <div class="spec-point">If you’re a homeowner, I help you uncover your property’s true development potential before you make a decision.</div>
+          <div class="spec-point">If you’re a first-time builder, I help you evaluate opportunities with clarity and confidence.</div>
+          <div class="spec-point">If you’re an experienced developer, I help you source and secure sites that make sense.</div>
+        </div>
+        <div style="margin-top:2rem">
+          <a href="contact.html" class="btn btn-primary">Discuss Your Development Project →</a>
+        </div>
+      </div>
+      
+      <div class="spec-visual reveal d2">
+        <!-- Comment out FREE RESOURCE LEAD MAGNETS 
+        <div class="spec-lead">
+          <span class="spec-lead-label">Free Resource</span>
+          <h4>Multiplex &amp; Development Opportunity Guide — Coquitlam &amp; Tri-Cities</h4>
+          <p>A plain-language overview of BC zoning changes, lot potential, and what to look for when exploring development in Greater Vancouver.</p>
+          <form class="spec-lead-form" onsubmit="handleSpecLead(event,'dev-lead')">
+            <input type="text" name="hp" class="honeypot" tabindex="-1" autocomplete="off">
+            <input class="spec-lead-input" type="text" name="firstName" placeholder="First Name" required>
+            <input class="spec-lead-input" type="email" name="email" placeholder="Email Address" required>
+            <button type="submit" class="spec-lead-btn">Get the Free Guide →</button>
+          </form>
+          <div id="dev-lead-success" class="spec-lead-success">
+            <strong>Guide on its way! ✓</strong>
+            <p>Check your inbox — Ravi will send it personally.</p>
+          </div>
+        </div> -->
+        
+        <h3>What we potentially look at together:</h3>
+        <ul>
+          <li>What can you actually build considering lot dimensions, setback requirements, and existing zoning</li>
+          <li>Multiplex opportunities under Bill 44</li>
+          <li>Comparable development sales in the area</li>
+          <li>Realistic build cost estimates (not optimistic ones)</li>
+          <li>Exit strategy: sell, rent, or hold</li>
+          <li>Builder selection and due diligence</li>
+          <li>Permit timeline expectations — city-specific</li>
+        </ul>
+        <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+          <p style="font-family:var(--display);font-style:italic;font-size:var(--base);color:#4A7C2F;line-height:1.5">"I have been on the development and build side multiple times. That changes what I see when I walk a property for development potential."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="spec-divider">
+
+<!-- FIRST-TIME BUYERS -->
+<section class="section section-alt spec-section" id="firsttimebuyers">
+  <div class="wrap">
+    <div class="spec-grid reverse">
+      <div class="spec-visual reveal d2">
+      <!-- Comment out FREE RESOURCE LEAD MAGNETS 
+        <div class="spec-lead">
+          <span class="spec-lead-label">Free Resource</span>
+          <h4>First-Time Buyer's Guide to New Construction in the Tri-Cities</h4>
+          <p>What to ask, what to watch for, and how to protect yourself when buying a presale or new build in BC.</p>
+          <form class="spec-lead-form" onsubmit="handleSpecLead(event,'ftb-lead')">
+            <input type="text" name="hp" class="honeypot" tabindex="-1" autocomplete="off">
+            <input class="spec-lead-input" type="text" name="firstName" placeholder="First Name" required>
+            <input class="spec-lead-input" type="email" name="email" placeholder="Email Address" required>
+            <button type="submit" class="spec-lead-btn">Get the Free Guide →</button>
+          </form>
+          <div id="ftb-lead-success" class="spec-lead-success">
+            <strong>Guide on its way! ✓</strong>
+            <p>Check your inbox — Ravi will send it personally.</p>
+          </div> 
+        </div> -->
+
+        <h3>What I Cover With Every First-Time Buyer</h3>
+        <ul>
+          <li>Pre-approval process — what this means and what to watch for</li>
+          <li>Resale vs. new construction vs. presale — honest comparison</li>
+          <li>Possession timelines and what happens if they shift</li>
+          <li>Strata bylaws, depreciation reports, and contingency funds</li>
+          <li>Offer strategy — how to be competitive without overpaying</li>
+          <li>What to look for (and stay away from) at showings or during home inspection</li>
+        </ul>
+        <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+          <p style="font-family:var(--display);font-style:italic;font-size:var(--base);color:#4A7C2F;line-height:1.5">"Most of my first-time buyers come back as move-up clients a few years later. That tells you everything about how this works."</p>
+        </div>
+       </div>
+      <div class="spec-content reveal d2">
+        <span class="section-label">First-Time Buyers</span>
+        <h2>Buying Your First Home Is a Big Deal. Let's Make Sure It feels Like a Win.</h2>
+        <p>This is probably the biggest purchase of your life. You deserve someone in your corner who will slow down, explain everything, and make sure you feel confident — not rushed.</p>
+        <p>That's exactly how I work.</p>
+        <p><h3>I will guide you through every step</h3></p>
+        <p>From understanding what you can realistically afford, to finding the right neighbourhood, to knowing exactly what you're signing — I walk beside you the whole way. No assumptions. No shortcuts. No pressure.
+Not sure where to start? That's exactly where most people are. Let's have a simple, no-pressure conversation and figure it out together.</p>
+        <div class="spec-points">
+        </div>
+        <div style="margin-top:2rem">
+          <a href="contact.html" class="btn btn-primary">Talk About Your First Home →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="spec-divider">
+
+<!-- MOVE-UP BUYERS -->
+<section class="section spec-section" id="moveup">
+  <div class="wrap">
+    <div class="spec-grid">
+      <div class="spec-content reveal">
+        <span class="section-label">Move-Up Buyers</span>
+        <h2>Moving Up — From Condo to Townhouse, Townhouse to Detached, or Into Your Forever Home</h2>
+        <p>Moving up sounds straightforward until you're living it. The real complexity is in the sequencing: do you sell first or buy first? How do you avoid carrying two mortgages? What does your next property actually need to look like for the next ten years of your life — not just right now?</p>
+        <p>These are the conversations I work through with move-up buyers before we start to look at listings. Having done this with dozens of tri-cities families, I know where the traps are, and I know how to navigate around them. The difference between a smooth move-up and a stressful one is almost always the strategy you build before anything goes on the market.</p>
+        <p>The sell-first vs. buy-first decision alone can cost or save you tens of thousands of dollars. Getting it right requires understanding your equity position, your bridging options, your target neighbourhood's inventory levels, and your risk tolerance. That's the work we do together — before anything is listed.</p>
+        <div class="spec-points">
+          <div class="spec-point">Sell-first vs. buy-first analysis — done correctly before any listing activity</div>
+          <div class="spec-point">Bridge financing strategy to avoid carrying two properties</div>
+          <div class="spec-point">Target neighbourhood assessment — where your budget goes furthest for your next 10 years</div>
+          <div class="spec-point">Timing strategy — when to list for maximum price and minimum stress</div>
+          <div class="spec-point">Negotiation on both sides — I've managed both transactions simultaneously for dozens of clients</div>
+        </div>
+        <div style="margin-top:2rem">
+          <a href="contact.html" class="btn btn-primary">Talk About Your Move-Up →</a>
+        </div>
+      </div>
+      <div class="spec-visual reveal d2">
+        <!-- Comment out FREE RESOURCE LEAD MAGNETS 
+        <div class="spec-lead">
+          <span class="spec-lead-label">Free Resource</span>
+          <h4>Move-Up Strategy Guide — Sell First vs. Buy First</h4>
+          <p>A straight-talk breakdown of sequencing, bridge financing, and timing so your move-up goes smoothly and costs you less.</p>
+          <form class="spec-lead-form" onsubmit="handleSpecLead(event,'moveup-lead')">
+            <input type="text" name="hp" class="honeypot" tabindex="-1" autocomplete="off">
+            <input class="spec-lead-input" type="text" name="firstName" placeholder="First Name" required>
+            <input class="spec-lead-input" type="email" name="email" placeholder="Email Address" required>
+            <button type="submit" class="spec-lead-btn">Get the Free Guide →</button>
+          </form>
+          <div id="moveup-lead-success" class="spec-lead-success">
+            <strong>Guide on its way! ✓</strong>
+            <p>Check your inbox — Ravi will send it personally.</p>
+          </div>
+        </div> -->
+
+        <h3>The Move-Up Sequence</h3>
+        <ul>
+          <li>Assess current equity and purchasing power</li>
+          <li>Define the target property — neighbourhood, lot size, living area, must-haves</li>
+          <li>Analyse the target market: inventory, days on market, price trends</li>
+          <li>Decide: sell first or buy first (help with making a well informed decision)</li>
+          <li>Prepare your current property for market</li>
+          <li>Execute both transactions with coordination and timing precision</li>
+        </ul>
+        <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+          <p style="font-family:var(--display);font-style:italic;font-size:var(--base);color:#4A7C2F;line-height:1.5">"The right move-up strategy can save you tens of thousands. The wrong sequence may cost you just as much."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- INVESTORS AND COMMERCIAL -->
+<section class="section section-alt spec-section" id="investorscommercial">
+  <div class="wrap">
+    <div class="spec-grid reverse">
+      <div class="spec-visual reveal">
+        <!-- Comment out FREE RESOURCE LEAD MAGNETS 
+        <div class="spec-lead">
+          <span class="spec-lead-label">Free Resource</span>
+          <h4>Investment Property Checklist — Numbers-First Analysis for Greater Vancouver</h4>
+          <p>The exact criteria used to evaluate rental properties, flips, and commercial opportunities — so you can make a go/no-go decision with confidence.</p>
+          <form class="spec-lead-form" onsubmit="handleSpecLead(event,'investor-lead')">
+            <input type="text" name="hp" class="honeypot" tabindex="-1" autocomplete="off">
+            <input class="spec-lead-input" type="text" name="firstName" placeholder="First Name" required>
+            <input class="spec-lead-input" type="email" name="email" placeholder="Email Address" required>
+            <button type="submit" class="spec-lead-btn">Get the Free Checklist →</button>
+          </form>
+          <div id="investor-lead-success" class="spec-lead-success">
+            <strong>Checklist on its way! ✓</strong>
+            <p>Check your inbox — Ravi will send it personally.</p>
+          </div>
+        </div> -->
+        
+        <h3>What we look at together:</h3>
+        <ul>
+          <li>Conservative renovation budgets based on real market costs</li>
+          <li>Rental projections grounded in current comparables, not peak rents</li>
+          <li>Carrying costs — mortgage, strata, taxes, insurance, vacancy</li>
+          <li>Exit strategy defined before entry — flip, rent, or hold</li>
+          <li>Micro-location analysis to identify where value actually holds</li>
+          <li>Comparable sales analysis — where current pricing actually is, not where it was</li>
+          <li>Timeline and delay risks factored into overall returns</li>
+          <li>Clear, numbers-driven go / no-go recommendation</li>
+        </ul>
+      </div>
+      <div class="spec-content reveal d2">
+        <span class="section-label">Investors &amp; Commercial</span>
+        <h2>Investment Money Deserves a Smarter Conversation.</h2>
+        <p>Whether you're acquiring an income property, evaluating a commercial lease, or looking for your next flip — the decision comes down to numbers first and emotions last. So focus on risk, numbers, and timing. That is where the right conversation matters.</p>
+        <p><h3>What I Bring to the Table</h3></p>
+        <p>I approach every deal the same way serious investors do — as a business decision.</p>
+        <p>With a background in consulting, every opportunity is evaluated through a practical lens: realistic returns, honest risks, and a clear exit strategy before moving forward. Combined with hands-on experience in development, I’ve seen where deals work—and where they quietly fall apart. In a market as hyperlocal as Greater Vancouver, that perspective makes a difference.</p>
+        <p><h3>Residential Investment · Fix & Flip · Commercial Leasing</h3></p>
+        <p>From single-family flips and rental properties to commercial leasing across the Tri-Cities and Greater Vancouver, I work with investors at different stages — but with one shared goal:</p>
+        <p>👉 Make decisions that hold up in the real world</p>
+        <p>If a deal makes sense, I will show you why. <br>If it does not, I will help you avoid it.</p>
+        <p><b>"Good deals don't need a sales pitch. They just need to make sense."</b></p>
+        <p>Have a deal you want a second set of eyes on? Or looking to find the right opportunity in this market?.</p>
+        <div class="spec-points">
+        </div>
+        <div style="margin-top:2rem">
+          <a href="contact.html" class="btn btn-primary">Let’s connect →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--bg-dark);padding:2.5rem 0;text-align:center">
+  <div class="wrap">
+    <div style="max-width:580px;margin:0 auto">
+      <span class="section-label dark-label reveal">Ready to Start?</span>
+      <h2 style="color:var(--t-light);font-size:clamp(1.25rem,2vw,1.5rem);margin:0.25rem 0 0.5rem" class="reveal d1">Not Sure Which Category You're In?</h2>
+      <p style="color:var(--t-muted);font-weight:300;font-size:var(--sm);margin-bottom:1.25rem" class="reveal d2">That's fine. Most people aren't when we first speak. Tell me where you are and we'll figure out the right path together.</p>
+      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap" class="reveal d3">
+        <a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Call</a>
+        <a href="contact.html" class="btn btn-outline">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="brand_assets/RA PREC - New Logo.jpeg" alt="Ravi Arora PREC">
+        <p class="footer-tagline">Real Estate. Real Advice. Real Results.</p>
+        <p>Serving buyers, sellers, and investors across Coquitlam, Port Coquitlam, the Tri-Cities, Metro Vancouver, and Fraser Valley.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/rezoningrealtor" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/rezoningrealtor/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.realtor.ca/agent/2071851/ravi-arora-201-2010-48th-ave-e-vancouver-british-columbia-v5p1r8" target="_blank" rel="noopener" aria-label="Realtor.ca">R•</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Specialties</h4>
+        <ul>
+          <li><a href="specialties.html#moveup">Move-Up Buyers</a></li>
+          <li><a href="specialties.html#firsttimebuyers">First-Time Buyers</a></li>
+          <li><a href="specialties.html#development">Developers &amp; Multiplex</a></li>
+          <li><a href="specialties.html#investors">Investors &amp; Flippers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="client-stories.html">Client Stories</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><!-- HIDDEN: <a href="deals.html">Weekly Deal 🔥</a> --></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item">📞 <a href="tel:+16043620362">(604) 362-0362</a></div>
+          <div class="footer-contact-item">✉ <a href="mailto:rezoningrealtor@gmail.com">rezoningrealtor@gmail.com</a></div>
+          <div class="footer-contact-item">📍 Coquitlam, BC</div>
+          <div style="margin-top:0.5rem"><a href="https://calendly.com/rezoningrealtor/20min" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:var(--xs);padding:0.6rem 1.125rem">Book a Free Call</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ravi Arora Personal Real Estate Corporation (PREC*) | All Rights Reserved<br>Coldwell Banker Universe Realty | Real Estate Board of Greater Vancouver</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SHEET_ENDPOINT = '';
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+document.addEventListener('click', e => { if (!nav.contains(e.target) && !mobileNav.contains(e.target)) mobileNav.classList.remove('open'); });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+const formTypeMap = {
+  'dev-lead':      'Lead Magnet — Development Guide',
+  'ftb-lead':      'Lead Magnet — First-Time Buyer Guide',
+  'moveup-lead':   'Lead Magnet — Move-Up Strategy Guide',
+  'investor-lead': 'Lead Magnet — Investment Checklist',
+};
+async function handleSpecLead(e, formId) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button');
+  if (form.querySelector('[name="hp"]').value) return;
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  if (SHEET_ENDPOINT) {
+    try {
+      await fetch(SHEET_ENDPOINT, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({
+        formType: formTypeMap[formId] || formId,
+        firstName: form.firstName.value,
+        email: form.email.value,
+        sourcePage: 'Specialties'
+      })});
+    } catch(err) { console.log('Submission error', err); }
+  }
+  form.style.display = 'none';
+  document.getElementById(formId + '-success').style.display = 'block';
+}
+
+// Sticky spec-nav active state
+const specLinks = document.querySelectorAll('.spec-nav-link');
+const specSections = document.querySelectorAll('.spec-section');
+const specObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      specLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.spec-nav-link[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+specSections.forEach(s => specObs.observe(s));
+</script>
+</body>
+</html>
